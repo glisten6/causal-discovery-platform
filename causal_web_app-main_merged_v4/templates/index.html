@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>可视化编辑</title>
+    <link rel="stylesheet" href="/lib/tom-select/tom-select.css">
+    <script src="/lib/tom-select/tom-select.complete.min.js"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -100,10 +102,10 @@
             background-color: #4CAF50;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 14px 28px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 20px;
         }
 
         .recommendation-prompt button:hover {
@@ -164,10 +166,10 @@
             background-color: #4CAF50;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 16px 32px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 20px;
         }
 
         .button-group button:hover {
@@ -187,10 +189,10 @@
             background-color: white;
             color: #4CAF50;
             border: none;
-            padding: 10px 20px;
+            padding: 16px 32px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 29px;
             margin: 0 10px;
         }
 
@@ -218,7 +220,7 @@
             margin-bottom: 30px;
         }
 
-        .modal input {
+        .modal input, .modal select {
             display: block;
             margin: 25px 0;
             padding: 18px;
@@ -226,6 +228,7 @@
             font-size: 20px;
             border: 1px solid #ddd;
             border-radius: 4px;
+            background-color: #e8f5e9;
         }
 
         .modal button {
@@ -305,22 +308,70 @@
             left: 50%;
             transform: translate(-50%, -50%);
             background-color: white;
-            padding: 20px;
+            padding: 35px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             z-index: 1000;
-            width: 80%;
-            max-width: 500px;
+            width: 85%;
+            max-width: 650px;
+        }
+
+        .recommendation-type-modal h3 {
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 26px;
+            color: #333;
+        }
+
+        .recommendation-type-modal label {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .recommendation-type-modal input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.4);
+        }
+
+        .recommendation-type-modal input[type="text"],
+        .recommendation-type-modal select {
+            width: 100%;
+            padding: 15px;
+            margin: 12px 0 18px 0;
+            font-size: 18px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #e8f5e9;
+            box-sizing: border-box;
         }
 
         .recommendation-type-modal input[type="file"] {
-            margin: 10px 0;
+            margin: 12px 0 18px 0;
+            font-size: 16px;
         }
 
-        .recommendation-type-modal select {
-            width: 100%;
-            padding: 8px;
-            margin: 10px 0;
+        .recommendation-type-modal button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 18px 12px 0 0;
+            font-size: 18px;
+        }
+
+        .recommendation-type-modal button:hover {
+            background-color: #45a049;
+        }
+        
+        /* tom-select样式覆盖 */
+        .recommendation-type-modal .ts-wrapper {
+            font-size: 18px;
+        }
+        .recommendation-type-modal .ts-control {
+            padding: 12px;
+            background-color: #e8f5e9;
         }
 
         body {
@@ -393,7 +444,10 @@
     <!-- 节点操作模态框 -->
     <div id="nodeModal" class="modal">
         <h3 id="nodeModalTitle"></h3>
-        <input id="nodeName" placeholder="节点名称 (必填)">
+        <input id="nodeNameInput" placeholder="节点名称 (必填)" style="display: none;">
+        <select id="nodeNameSelect" style="display: none;">
+            <option value="" disabled selected>选择节点 (必填)</option>
+        </select>
         <input id="nodeType" placeholder="节点类型">
         <input id="nodeSource" placeholder="节点来源">
         <button onclick="submitNodeForm()">完成</button>
@@ -403,9 +457,21 @@
     <!-- 边操作模态框 -->
     <div id="edgeModal" class="modal">
         <h3 id="edgeModalTitle"></h3>
-        <input id="startNode" placeholder="起始节点 (必填)">
-        <input id="endNode" placeholder="终止节点 (必填)">
-        <input id="edgeRelation" placeholder="关系">
+        <select id="startNode">
+            <option value="" disabled selected>起始节点 (必填)</option>
+        </select>
+        <select id="endNode">
+            <option value="" disabled selected>终止节点 (必填)</option>
+        </select>
+        <select id="edgeRelation" onchange="toggleCustomRelation()">
+            <option value="" disabled selected>关系类型</option>
+            <option value="促进">促进</option>
+            <option value="抑制">抑制</option>
+            <option value="无边">无边</option>
+            <option value="未知">未知</option>
+            <option value="其他">其他</option>
+        </select>
+        <input id="customRelation" placeholder="请输入自定义关系" style="display: none;">
         <input id="edgeSource" placeholder="来源">
         <button onclick="submitEdgeForm()">完成</button>
         <button style="display: none;" onclick="changeEdgeDirection()">改变边方向</button>
@@ -415,20 +481,24 @@
     <!-- 因果推荐类型模态框 -->
     <div id="recommendationTypeModal" class="recommendation-type-modal">
         <h3>选择推荐类型</h3>
-        <input type="radio" id="dataBased" name="recommendationType" value="dataBased" checked onclick="toggleAlgorithmOptions()">
-        <label for="dataBased">基于数据的推荐</label><br>
-        <input type="radio" id="knowledgeBased" name="recommendationType" value="knowledgeBased" onclick="toggleAlgorithmOptions()">
-        <label for="knowledgeBased">基于知识的推荐</label><br>
+        <div style="margin-bottom: 15px;">
+            <input type="radio" id="dataBased" name="recommendationType" value="dataBased" checked onclick="toggleAlgorithmOptions()">
+            <label for="dataBased">基于数据的推荐</label>
+        </div>
+        <div style="margin-bottom: 15px;">
+            <input type="radio" id="knowledgeBased" name="recommendationType" value="knowledgeBased" onclick="toggleAlgorithmOptions()">
+            <label for="knowledgeBased">基于知识的推荐</label>
+        </div>
         
-        <!-- 特征品质输入框 -->
         <div style="margin-top: 15px;">
-            <label for="featureQuality">特征品质：</label>
-            <input type="text" id="featureQuality" name="featureQuality" placeholder="输入特征品质名称（选填）" style="width: 300px; height: 30px; padding: 5px;">
+            <label for="featureQuality">特征品质（可多选）：</label>
+            <select id="featureQuality" name="featureQuality" multiple>
+            </select>
         </div>
 
-        <div id="dataBasedOptions" style="margin-top: 10px;">
+        <div id="dataBasedOptions" style="margin-top: 15px;">
             <label for="dataAlgorithm">选择算法：</label>
-            <select id="dataAlgorithm" style="width: 300px; height: 30px; padding: 5px;">
+            <select id="dataAlgorithm">
                 <option value="Notears-mlp">Notears-mlp</option>
                 <option value="PC">PC</option>
                 <option value="MCSL">MCSL</option>
@@ -436,31 +506,27 @@
                 <option value="GES">GES</option>
                 <option value="DirectLiNGAM">DirectLiNGAM</option>
                 <option value="GraNDag">GraNDag</option>
-            </select><br>
+            </select>
             <label for="dataFile">选择数据文件：</label>
             <input type="file" id="dataFile" name="dataFile">
-            <p style="color: red; font-size: 14px; margin-top: 5px;">提示：数据文件的节点与原因果图节点不能存在同义词现象</p>
+            <!-- <p style="color: #e74c3c; font-size: 14px; margin-top: 5px;">提示：数据文件的节点与原因果图节点不能存在同义词现象</p> -->
         </div>
         
-        <div id="knowledgeBasedOptions" style="margin-top: 10px; display: none;">
+        <div id="knowledgeBasedOptions" style="margin-top: 15px; display: none;">
             <label for="knowledgeAlgorithm">选择算法：</label>
-            <select id="knowledgeAlgorithm" style="width: 300px; height: 30px; padding: 5px;">
+            <select id="knowledgeAlgorithm">
                 <option value="algorithm8">算法3</option>
                 <option value="algorithm9">算法4</option>
-            </select><br>
+            </select>
             <label for="knowledgeFile">选择知识文件：</label>
             <input type="file" id="knowledgeFile" name="knowledgeFile">
-            <p style="color: red; font-size: 14px; margin-top: 5px;">提示：数据文件的节点与原因果图节点不能存在同义词现象</p>
+            <!-- <p style="color: #e74c3c; font-size: 14px; margin-top: 5px;">提示：数据文件的节点与原因果图节点不能存在同义词现象</p> -->
         </div>
-        <!--        符磊2025/4/9修改-->
-        <button onclick="confirmRecommendation()">确定</button>
-        <!--        <button-->
-        <!--              class="file_confirm"-->
-        <!--              data-src="{{ url_for('static', filename='modified_graph.html') }}">-->
-        <!--              确定-->
-        <!--        </button>-->
-        <!--结束-->
-        <button onclick="closeModal('recommendationTypeModal')">取消</button>
+        
+        <div style="margin-top: 20px;">
+            <button onclick="confirmRecommendation()">确定</button>
+            <button onclick="closeModal('recommendationTypeModal')">取消</button>
+        </div>
     </div>
 
     <!-- 底部悬浮框 -->

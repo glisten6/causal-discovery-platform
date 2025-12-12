@@ -11,9 +11,38 @@ function showRecommendation(needRec) {
     }
 }
 
+// 全局变量存储tom-select实例
+let featureQualitySelect = null;
+
 function openRecommendationTypeModal() {
     const modal = document.getElementById('recommendationTypeModal');
     if (modal) {
+        // 获取节点列表填充特征品质下拉框
+        fetch('/get_nodes')
+            .then(r => r.json())
+            .then(data => {
+                const select = document.getElementById('featureQuality');
+                
+                // 如果已有tom-select实例，先销毁
+                if (featureQualitySelect) {
+                    featureQualitySelect.destroy();
+                    featureQualitySelect = null;
+                }
+                
+                // 填充选项
+                select.innerHTML = '';
+                data.nodes.forEach(node => {
+                    select.innerHTML += `<option value="${node}">${node}</option>`;
+                });
+                
+                // 初始化tom-select多选下拉框
+                featureQualitySelect = new TomSelect('#featureQuality', {
+                    plugins: ['remove_button'],
+                    placeholder: '选择特征品质（可多选）',
+                    maxItems: null
+                });
+            })
+            .catch(err => console.error('获取节点列表失败:', err));
         modal.style.display = 'block';
     }
 }
@@ -153,7 +182,8 @@ function confirmRecommendation() {
         alert('请选择推荐类型');
         return;
     }
-    const featureQuality = document.getElementById('featureQuality').value; // 获取特征品质
+    // 获取多选的特征品质（从tom-select实例获取）
+    const featureQuality = featureQualitySelect ? featureQualitySelect.getValue().join(',') : '';
     console.log("特征品质:", featureQuality);
 
     let dataFile, dataAlgorithm;
@@ -311,20 +341,34 @@ function openNodeModal(action, nodeName = '') {
     } else {
         const modal = document.getElementById('nodeModal');
         const title = document.getElementById('nodeModalTitle');
+        const nodeInput = document.getElementById('nodeNameInput');
+        const nodeSelect = document.getElementById('nodeNameSelect');
+        
         if (modal && title) {
             title.textContent = action === 'add' ? '添加节点' : action === 'delete' ? '删除节点' : '更新节点';
-            if (nodeName) {
-                document.getElementById('nodeName').value = nodeName;
-                const nodeInfo = getNodeInfo(nodeName);
-                if (nodeInfo) {
-                    document.getElementById('nodeType').value = nodeInfo.type || '';
-                    document.getElementById('nodeSource').value = nodeInfo.source || '';
-                }
+            
+            // 添加节点用输入框，删除/更新用下拉框
+            if (action === 'add') {
+                nodeInput.style.display = 'block';
+                nodeSelect.style.display = 'none';
+                nodeInput.value = nodeName || '';
             } else {
-                document.getElementById('nodeName').value = '';
-                document.getElementById('nodeType').value = '';
-                document.getElementById('nodeSource').value = '';
+                nodeInput.style.display = 'none';
+                nodeSelect.style.display = 'block';
+                // 获取节点列表填充下拉框
+                fetch('/get_nodes')
+                    .then(r => r.json())
+                    .then(data => {
+                        nodeSelect.innerHTML = '<option value="" disabled selected>选择节点 (必填)</option>';
+                        data.nodes.forEach(node => {
+                            nodeSelect.innerHTML += `<option value="${node}">${node}</option>`;
+                        });
+                        if (nodeName) nodeSelect.value = nodeName;
+                    });
             }
+            
+            document.getElementById('nodeType').value = '';
+            document.getElementById('nodeSource').value = '';
             modal.style.display = 'block';
         }
     }
@@ -338,20 +382,39 @@ function openEdgeModal(action, startNode = '', endNode = '') {
         const title = document.getElementById('edgeModalTitle');
         if (modal && title) {
             title.textContent = action === 'add' ? '添加边' : action === 'delete' ? '删除边' : '更新边';
-            if (startNode && endNode) {
-                document.getElementById('startNode').value = startNode;
-                document.getElementById('endNode').value = endNode;
-                const edgeInfo = getEdgeInfo(startNode, endNode);
-                if (edgeInfo) {
-                    document.getElementById('edgeRelation').value = edgeInfo.relation || '';
-                    document.getElementById('edgeSource').value = edgeInfo.source || '';
-                }
-            } else {
-                document.getElementById('startNode').value = '';
-                document.getElementById('endNode').value = '';
-                document.getElementById('edgeRelation').value = '';
-                document.getElementById('edgeSource').value = '';
-            }
+            
+            // 获取节点列表并填充下拉框
+            fetch('/get_nodes')
+                .then(response => response.json())
+                .then(data => {
+                    const startSelect = document.getElementById('startNode');
+                    const endSelect = document.getElementById('endNode');
+                    
+                    // 清空并重新填充选项
+                    startSelect.innerHTML = '<option value="" disabled selected>起始节点 (必填)</option>';
+                    endSelect.innerHTML = '<option value="" disabled selected>终止节点 (必填)</option>';
+                    
+                    data.nodes.forEach(node => {
+                        startSelect.innerHTML += `<option value="${node}">${node}</option>`;
+                        endSelect.innerHTML += `<option value="${node}">${node}</option>`;
+                    });
+                    
+                    // 如果有预设值则选中
+                    if (startNode && endNode) {
+                        startSelect.value = startNode;
+                        endSelect.value = endNode;
+                        const edgeInfo = getEdgeInfo(startNode, endNode);
+                        if (edgeInfo) {
+                            document.getElementById('edgeRelation').value = edgeInfo.relation || '';
+                            document.getElementById('edgeSource').value = edgeInfo.source || '';
+                        }
+                    } else {
+                        document.getElementById('edgeRelation').value = '';
+                        document.getElementById('edgeSource').value = '';
+                    }
+                })
+                .catch(err => console.error('获取节点列表失败:', err));
+            
             modal.style.display = 'block';
 
             const changeDirectionButton = modal.querySelector('button[onclick="changeEdgeDirection()"]');
@@ -365,7 +428,15 @@ function openEdgeModal(action, startNode = '', endNode = '') {
 
 // 提交“更新节点”或“添加节点”表单
 function submitNodeForm() {
-    const nodeName = document.getElementById('nodeName').value;
+    const title = document.getElementById('nodeModalTitle').textContent;
+    // 根据操作类型从不同元素获取节点名称
+    let nodeName;
+    if (title === '添加节点') {
+        nodeName = document.getElementById('nodeNameInput').value;
+    } else {
+        nodeName = document.getElementById('nodeNameSelect').value;
+    }
+    
     if (!nodeName) {
         alert('节点名称是必填项！');
         return;
@@ -373,7 +444,6 @@ function submitNodeForm() {
     const nodeType = document.getElementById('nodeType').value;    // 节点类型
     const nodeSource = document.getElementById('nodeSource').value; // 节点来源
 
-    const title = document.getElementById('nodeModalTitle').textContent;
     let action = '';
     if (title === '添加节点') {
         action = 'add_node';
@@ -407,6 +477,18 @@ function submitNodeForm() {
 }
 
 // 同理，提交流/更新/删除边时，也可传 relation、source 等
+// 切换自定义关系输入框显示
+function toggleCustomRelation() {
+    const select = document.getElementById('edgeRelation');
+    const customInput = document.getElementById('customRelation');
+    if (select.value === '其他') {
+        customInput.style.display = 'block';
+    } else {
+        customInput.style.display = 'none';
+        customInput.value = '';
+    }
+}
+
 function submitEdgeForm() {
     const startNode = document.getElementById('startNode').value;
     const endNode = document.getElementById('endNode').value;
@@ -414,10 +496,24 @@ function submitEdgeForm() {
         alert('起始节点和终止节点是必填项！');
         return;
     }
-    const edgeRelation = document.getElementById('edgeRelation').value;
+    // 检查起点和终点不能相同
+    const title = document.getElementById('edgeModalTitle').textContent;
+    if ((title === '添加边' || title === '更新边') && startNode === endNode) {
+        alert('起始节点和终止节点不能相同！');
+        return;
+    }
+    // 处理关系类型：如果选择"其他"则使用自定义输入
+    let edgeRelation = document.getElementById('edgeRelation').value;
+    if (edgeRelation === '其他') {
+        const customRelation = document.getElementById('customRelation').value.trim();
+        if (!customRelation) {
+            alert('请输入自定义关系类型！');
+            return;
+        }
+        edgeRelation = customRelation;
+    }
     const edgeSource = document.getElementById('edgeSource').value;
 
-    const title = document.getElementById('edgeModalTitle').textContent;
     let action = '';
     if (title === '添加边') {
         action = 'add_edge';

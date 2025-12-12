@@ -42,6 +42,11 @@ logging.basicConfig(filename=os.path.join(log_dir, 'app.log'), level=logging.INF
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
+# 添加lib目录为静态文件路由
+@app.route('/lib/<path:filename>')
+def lib_static(filename):
+    return send_from_directory('lib', filename)
+
 # 服务器启动时生成唯一ID，用于前端检测服务器重启
 SERVER_SESSION_ID = str(uuid.uuid4())
 
@@ -275,7 +280,7 @@ class CausalGraph:
                 y=y,
                 physics=False,
                 title=str(self.sm.nodes[node]),
-                font={"size": 20, "face": "Arial Narrow, sans-serif"}  # 使用窄字体让英文更紧凑
+                font={"size": 24, "face": "Arial Narrow, sans-serif"}  # 使用窄字体让英文更紧凑
             )
 
         for edge in self.sm.edges:
@@ -284,20 +289,36 @@ class CausalGraph:
             edge_source = relation_info.get("source", "Unknown")
             edge_title = f"Relation: {rel_label}\nSource: {edge_source}"
 
-            net.add_edge(
-                edge[0],
-                edge[1],
-                label=rel_label,
-                arrows="to",
-                title=str(edge_title),
-                font={"size": 18, "face": "Arial Narrow, sans-serif"}  # 使用窄字体让英文更紧凑
-            )
+            # 根据relation类型设置边样式
+            if rel_label == "无边":
+                # 无边约束：红色虚线
+                net.add_edge(
+                    edge[0],
+                    edge[1],
+                    label=rel_label,
+                    arrows="to",
+                    title=str(edge_title),
+                    color={"color": "#e74c3c", "highlight": "#e74c3c"},
+                    dashes=[5, 5],
+                    width=2,
+                    font={"size": 22, "face": "Arial Narrow, sans-serif", "color": "#e74c3c"}
+                )
+            else:
+                # 普通边：实线
+                net.add_edge(
+                    edge[0],
+                    edge[1],
+                    label=rel_label,
+                    arrows="to",
+                    title=str(edge_title),
+                    font={"size": 22, "face": "Arial Narrow, sans-serif"}
+                )
 
         # 设置全局字体大小
         net.set_options("""{
             "physics": { "enabled": false },
-            "nodes": { "font": { "size": 20, "face": "Arial Narrow, sans-serif" } },
-            "edges": { "font": { "size": 18, "face": "Arial Narrow, sans-serif" } }
+            "nodes": { "font": { "size": 24, "face": "Arial Narrow, sans-serif" } },
+            "edges": { "font": { "size": 22, "face": "Arial Narrow, sans-serif" } }
         }""")
         net.save_graph(filename)
         logging.info(f"Graph saved to {filename}")
@@ -341,6 +362,12 @@ def main():
 def list_pending_changes():
     """返回全部待处理修改记录"""
     return jsonify({"pending_changes": pending_changes})
+
+@app.route('/get_nodes', methods=['GET'])
+def get_nodes():
+    """返回当前可修改图的所有节点列表"""
+    nodes = list(cg_modified.sm.nodes())
+    return jsonify({"nodes": nodes})
 
 @app.route('/versions')
 def versions():

@@ -109,10 +109,10 @@
             background-color: white;
             color: #4CAF50;
             border: none;
-            padding: 10px 20px;
+            padding: 16px 32px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 29px;
             transition: all 0.2s;
         }
         
@@ -157,6 +157,7 @@
             <div class="action-buttons">
                 <button onclick="returnToMain()">返回主界面</button>
                 <button onclick="setGlobalVersion()">设为全局因果图</button>
+                <button onclick="downloadGlobalJson()">下载全局JSON</button>
                 <button onclick="deleteVersion()">删除版本</button>
                 <button onclick="goToIndex()">因果图编辑</button>
             </div>
@@ -336,6 +337,25 @@
                 console.error(err);
                 alert("删除失败");
             });
+        }
+        
+        // 下载全局版本的JSON
+        function downloadGlobalJson() {
+            const selectedVariety = sessionStorage.getItem('selectedVariety');
+            if (!selectedVariety) {
+                alert("未选择品种");
+                return;
+            }
+            const globalVersion = document.getElementById('globalVersionSpan').innerText;
+            if (!globalVersion) {
+                alert("未找到全局版本");
+                return;
+            }
+            // 直接下载variety_jsons中的JSON文件
+            const link = document.createElement('a');
+            link.href = `/static/variety_jsons/${encodeURIComponent(selectedVariety)}.json`;
+            link.download = `${selectedVariety}_${globalVersion}.json`;
+            link.click();
         }
 
         // 增加因果图编辑按钮的逻辑

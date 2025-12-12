@@ -285,12 +285,12 @@ class VersionTree:
                 data=data,
                 orient="LR",  # 可选："TB" (自上而下), "LR" (自左而右), "RL" 等
                 symbol="circle",
-                symbol_size=14,
+                symbol_size=36,  # 放大节点
                 is_expand_and_collapse=False,
                 label_opts=opts.LabelOpts(
                     position="top",
                     vertical_align="middle",
-                    font_size=12
+                    font_size=20  # 放大字体
                 ),
                 tooltip_opts=opts.TooltipOpts(
                     trigger="item",
@@ -300,7 +300,9 @@ class VersionTree:
             .set_global_opts(
                 title_opts=opts.TitleOpts(
                     title="版本管理树",
-                    subtitle=f"种类: {self.variety_name}" if self.variety_name else ""
+                    subtitle=f"种类: {self.variety_name}" if self.variety_name else "",
+                    title_textstyle_opts=opts.TextStyleOpts(font_size=24),  # 放大标题
+                    subtitle_textstyle_opts=opts.TextStyleOpts(font_size=18)  # 放大副标题
                 ),
                 legend_opts=opts.LegendOpts(
                     pos_left="left",

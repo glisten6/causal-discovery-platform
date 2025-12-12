@@ -16,57 +16,39 @@
                 "causal_graph_hash": "72855c8c17dd1062",
                 "children": [
                     {
-                        "version_number": "v3.0",
+                        "version_number": "v10.0",
                         "content": "demo",
                         "author": "李四",
-                        "created_at": "2025-12-12T13:21:56.930569",
-                        "last_modified": "2025-12-12T13:21:56.930569",
-                        "causal_graph_hash": "357456a24bfe1b57",
+                        "created_at": "2025-12-12T15:59:05.534743",
+                        "last_modified": "2025-12-12T15:59:05.534743",
+                        "causal_graph_hash": "0656712b9080b24d",
                         "children": [
                             {
-                                "version_number": "v6.0",
-                                "content": "Candidate Upload",
-                                "author": "System",
-                                "created_at": "2025-12-12T15:03:40.189599",
-                                "last_modified": "2025-12-12T15:03:40.189599",
-                                "causal_graph_hash": "820816418e68b2ad",
+                                "version_number": "v11.0",
+                                "content": "demo",
+                                "author": "李四",
+                                "created_at": "2025-12-12T20:17:21.026998",
+                                "last_modified": "2025-12-12T20:17:21.026998",
+                                "causal_graph_hash": "3763428d94d912d4",
                                 "children": [
                                     {
-                                        "version_number": "v7.0",
+                                        "version_number": "v12.0",
                                         "content": "Candidate Upload",
                                         "author": "System",
-                                        "created_at": "2025-12-12T15:04:25.203890",
-                                        "last_modified": "2025-12-12T15:04:25.203890",
-                                        "causal_graph_hash": "a94cb9e2a9cb40c8",
+                                        "created_at": "2025-12-13T01:08:17.424341",
+                                        "last_modified": "2025-12-13T01:08:17.424341",
+                                        "causal_graph_hash": "a0adfc38c03eacc2",
                                         "children": [
                                             {
-                                                "version_number": "v8.0",
+                                                "version_number": "v14.0",
                                                 "content": "Candidate Upload",
                                                 "author": "System",
-                                                "created_at": "2025-12-12T15:04:41.518570",
-                                                "last_modified": "2025-12-12T15:04:41.518570",
-                                                "causal_graph_hash": "34d59a4ecd617b4c",
-                                                "children": []
-                                            },
-                                            {
-                                                "version_number": "v9.0",
-                                                "content": "Candidate Upload",
-                                                "author": "System",
-                                                "created_at": "2025-12-12T15:41:27.664756",
-                                                "last_modified": "2025-12-12T15:41:27.664756",
-                                                "causal_graph_hash": "d0901b6de845fad6",
+                                                "created_at": "2025-12-13T01:13:39.646191",
+                                                "last_modified": "2025-12-13T01:13:39.646191",
+                                                "causal_graph_hash": "ea6a52110c639371",
                                                 "children": []
                                             }
                                         ]
-                                    },
-                                    {
-                                        "version_number": "v10.0",
-                                        "content": "demo",
-                                        "author": "李四",
-                                        "created_at": "2025-12-12T15:59:05.534743",
-                                        "last_modified": "2025-12-12T15:59:05.534743",
-                                        "causal_graph_hash": "0656712b9080b24d",
-                                        "children": []
                                     }
                                 ]
                             }
@@ -76,7 +58,7 @@
             }
         ]
     },
-    "current_version": "v7.0",
-    "version_counter": 10,
+    "current_version": "v14.0",
+    "version_counter": 14,
     "variety_name": "庄稼"
 }
