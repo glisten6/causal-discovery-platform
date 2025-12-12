@@ -412,6 +412,9 @@ function openEdgeModal(action, startNode = '', endNode = '') {
                         document.getElementById('edgeRelation').value = '';
                         document.getElementById('edgeSource').value = '';
                     }
+                    // 重置自定义关系输入框
+                    document.getElementById('customRelation').style.display = 'none';
+                    document.getElementById('customRelation').value = '';
                 })
                 .catch(err => console.error('获取节点列表失败:', err));
             
