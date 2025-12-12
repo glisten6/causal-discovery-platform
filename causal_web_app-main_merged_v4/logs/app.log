@@ -25970,3 +25970,200 @@
 2025-12-13 01:17:32,694 - INFO - Added edge from PestInfestation to CropYield with attributes {'relation': 'Negative', 'source': 'AgriculturalResearch'}
 2025-12-13 01:17:32,703 - WARNING -  * Debugger is active!
 2025-12-13 01:17:32,713 - INFO -  * Debugger PIN: 958-219-832
+2025-12-13 01:18:02,357 - INFO - Added node: SoilAcidity with attributes {'type': 'EnvironmentalFactor', 'source': 'SoilTest'}
+2025-12-13 01:18:02,357 - INFO - Added node: SoilFertility with attributes {'type': 'EnvironmentalFactor', 'source': 'SoilTest'}
+2025-12-13 01:18:02,357 - INFO - Added node: CropYield with attributes {'type': 'Outcome', 'source': 'HarvestAnalysis'}
+2025-12-13 01:18:02,357 - INFO - Added node: Climate with attributes {'type': 'EnvironmentalFactor', 'source': 'WeatherStation'}
+2025-12-13 01:18:02,357 - INFO - Added node: Terrain with attributes {'type': 'EnvironmentalFactor', 'source': 'TopographicSurvey'}
+2025-12-13 01:18:02,358 - INFO - Added node: Irrigation with attributes {'type': 'Intervention', 'source': 'FarmManagement'}
+2025-12-13 01:18:02,358 - INFO - Added node: PestInfestation with attributes {'type': 'EnvironmentalFactor', 'source': 'PestSurvey'}
+2025-12-13 01:18:02,358 - INFO - Added edge from SoilAcidity to SoilFertility with attributes {'relation': 'Negative', 'source': 'AgriculturalResearch'}
+2025-12-13 01:18:02,358 - INFO - Added edge from SoilFertility to CropYield with attributes {'relation': 'Positive', 'source': 'AgriculturalResearch'}
+2025-12-13 01:18:02,358 - INFO - Added edge from Climate to CropYield with attributes {'relation': 'Positive', 'source': 'AgriculturalResearch'}
+2025-12-13 01:18:02,359 - INFO - Added edge from Terrain to SoilFertility with attributes {'relation': 'Negative', 'source': 'AgriculturalResearch'}
+2025-12-13 01:18:02,359 - INFO - Added edge from Irrigation to CropYield with attributes {'relation': 'Positive', 'source': 'AgriculturalResearch'}
+2025-12-13 01:18:02,359 - INFO - Added edge from PestInfestation to CropYield with attributes {'relation': 'Negative', 'source': 'AgriculturalResearch'}
+2025-12-13 01:18:02,579 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-12-13 01:18:02,579 - INFO - [33mPress CTRL+C to quit[0m
+2025-12-13 01:18:02,585 - INFO -  * Restarting with stat
+2025-12-13 01:18:07,327 - INFO - Added node: SoilAcidity with attributes {'type': 'EnvironmentalFactor', 'source': 'SoilTest'}
+2025-12-13 01:18:07,327 - INFO - Added node: SoilFertility with attributes {'type': 'EnvironmentalFactor', 'source': 'SoilTest'}
+2025-12-13 01:18:07,327 - INFO - Added node: CropYield with attributes {'type': 'Outcome', 'source': 'HarvestAnalysis'}
+2025-12-13 01:18:07,327 - INFO - Added node: Climate with attributes {'type': 'EnvironmentalFactor', 'source': 'WeatherStation'}
+2025-12-13 01:18:07,327 - INFO - Added node: Terrain with attributes {'type': 'EnvironmentalFactor', 'source': 'TopographicSurvey'}
+2025-12-13 01:18:07,327 - INFO - Added node: Irrigation with attributes {'type': 'Intervention', 'source': 'FarmManagement'}
+2025-12-13 01:18:07,327 - INFO - Added node: PestInfestation with attributes {'type': 'EnvironmentalFactor', 'source': 'PestSurvey'}
+2025-12-13 01:18:07,327 - INFO - Added edge from SoilAcidity to SoilFertility with attributes {'relation': 'Negative', 'source': 'AgriculturalResearch'}
+2025-12-13 01:18:07,327 - INFO - Added edge from SoilFertility to CropYield with attributes {'relation': 'Positive', 'source': 'AgriculturalResearch'}
+2025-12-13 01:18:07,327 - INFO - Added edge from Climate to CropYield with attributes {'relation': 'Positive', 'source': 'AgriculturalResearch'}
+2025-12-13 01:18:07,327 - INFO - Added edge from Terrain to SoilFertility with attributes {'relation': 'Negative', 'source': 'AgriculturalResearch'}
+2025-12-13 01:18:07,327 - INFO - Added edge from Irrigation to CropYield with attributes {'relation': 'Positive', 'source': 'AgriculturalResearch'}
+2025-12-13 01:18:07,327 - INFO - Added edge from PestInfestation to CropYield with attributes {'relation': 'Negative', 'source': 'AgriculturalResearch'}
+2025-12-13 01:18:07,338 - WARNING -  * Debugger is active!
+2025-12-13 01:18:07,345 - INFO -  * Debugger PIN: 958-219-832
+2025-12-13 01:18:07,430 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:07] "GET /index HTTP/1.1" 200 -
+2025-12-13 01:18:08,659 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:08] "GET /lib/tom-select/tom-select.complete.min.js HTTP/1.1" 200 -
+2025-12-13 01:18:08,808 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:08] "GET /lib/tom-select/tom-select.css HTTP/1.1" 200 -
+2025-12-13 01:18:08,832 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:08] "[33mGET /lib/tom-select/tom-select.complete.min.js.map HTTP/1.1[0m" 404 -
+2025-12-13 01:18:08,852 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:08] "GET /static/script.js HTTP/1.1" 200 -
+2025-12-13 01:18:08,974 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:08] "GET /static/original_graph.html?v= HTTP/1.1" 200 -
+2025-12-13 01:18:09,185 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:09] "[33mGET /lib/tom-select/tom-select.css.map HTTP/1.1[0m" 404 -
+2025-12-13 01:18:09,204 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:09] "[33mGET /static/lib/bindings/utils.js HTTP/1.1[0m" 404 -
+2025-12-13 01:18:09,288 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:09] "GET /get_server_session HTTP/1.1" 200 -
+2025-12-13 01:18:11,899 - INFO - ĞŞ¸ÄºóµÄ½Úµã²¼¾ÖÒÑ±£´æµ½ static/layout.json
+2025-12-13 01:18:11,927 - INFO - Graph saved to static/modified_graph.html
+2025-12-13 01:18:11,952 - INFO - Graph saved to static/original_graph.html
+2025-12-13 01:18:11,959 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:11] "GET / HTTP/1.1" 200 -
+2025-12-13 01:18:11,979 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:11] "GET /static/script.js HTTP/1.1" 200 -
+2025-12-13 01:18:12,050 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:12] "GET /get_server_session HTTP/1.1" 200 -
+2025-12-13 01:18:12,073 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:12] "GET /get_varieties HTTP/1.1" 200 -
+2025-12-13 01:18:12,076 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:12] "GET /list_pending_changes HTTP/1.1" 200 -
+2025-12-13 01:18:12,082 - INFO - Added node: SoilAcidity with attributes {'type': 'EnvironmentalFactor', 'source': 'SoilTest'}
+2025-12-13 01:18:12,082 - INFO - Added node: SoilFertility with attributes {'type': 'EnvironmentalFactor', 'source': 'SoilTest'}
+2025-12-13 01:18:12,082 - INFO - Added node: CropYield with attributes {'type': 'Outcome', 'source': 'HarvestAnalysis'}
+2025-12-13 01:18:12,083 - INFO - Added node: Climate with attributes {'type': 'EnvironmentalFactor', 'source': 'WeatherStation'}
+2025-12-13 01:18:12,083 - INFO - Added node: Terrain with attributes {'type': 'EnvironmentalFactor', 'source': 'TopographicSurvey'}
+2025-12-13 01:18:12,083 - INFO - Added node: PestInfestation with attributes {'type': 'EnvironmentalFactor', 'source': 'PestSurvey'}
+2025-12-13 01:18:12,083 - INFO - Added edge from SoilAcidity to SoilFertility with attributes {'relation': 'Negative', 'source': 'AgriculturalResearch'}
+2025-12-13 01:18:12,084 - INFO - Added edge from SoilFertility to CropYield with attributes {'relation': 'Positive', 'source': 'AgriculturalResearch'}
+2025-12-13 01:18:12,084 - INFO - Added edge from Climate to CropYield with attributes {'relation': 'Positive', 'source': 'AgriculturalResearch'}
+2025-12-13 01:18:12,084 - INFO - Added edge from Terrain to SoilFertility with attributes {'relation': 'Negative', 'source': 'AgriculturalResearch'}
+2025-12-13 01:18:12,084 - INFO - Added edge from PestInfestation to CropYield with attributes {'relation': 'Negative', 'source': 'AgriculturalResearch'}
+2025-12-13 01:18:12,098 - INFO - ĞŞ¸ÄºóµÄ½Úµã²¼¾ÖÒÑ±£´æµ½ static/variety_layouts\Æ·ÖÖ2.json
+2025-12-13 01:18:12,124 - INFO - Graph saved to static/variety_htmls\Æ·ÖÖ2.html
+2025-12-13 01:18:12,124 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:12] "GET /regenerate_variety_html/Æ·ÖÖ2 HTTP/1.1" 200 -
+2025-12-13 01:18:12,148 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:12] "GET /static/variety_htmls/Æ·ÖÖ2.html?1765559892140 HTTP/1.1" 200 -
+2025-12-13 01:18:12,161 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:12] "[33mGET /static/variety_htmls/lib/bindings/utils.js HTTP/1.1[0m" 404 -
+2025-12-13 01:18:15,311 - INFO - Added node: ÖÖÖ²Ãæ»ı with attributes {'type': '¹ÜÀí´ëÊ©', 'source': 'Å©³¡¹ÜÀí¼ÇÂ¼'}
+2025-12-13 01:18:15,311 - INFO - Added node: ×Ü²úÁ¿ with attributes {'type': '½á¹û±äÁ¿', 'source': 'ÊÕ»ñÍ³¼Æ'}
+2025-12-13 01:18:15,311 - INFO - Added node: »¯·ÊÊ©ÓÃÁ¿ with attributes {'type': '¹ÜÀí´ëÊ©', 'source': 'Å©³¡¹ÜÀí¼ÇÂ¼'}
+2025-12-13 01:18:15,311 - INFO - Added node: Å©Ò©Ê©ÓÃÁ¿ with attributes {'type': '¹ÜÀí´ëÊ©', 'source': 'Å©³¡¹ÜÀí¼ÇÂ¼'}
+2025-12-13 01:18:15,311 - INFO - Added node: µ¥Î»Ãæ»ı²úÁ¿ with attributes {'type': '½á¹û±äÁ¿', 'source': 'ÊÕ»ñÍ³¼Æ'}
+2025-12-13 01:18:15,312 - INFO - Added node: ÍÁÈÀµªº¬Á¿ with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:18:15,312 - INFO - Added node: ÍÁÈÀÁ×º¬Á¿ with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:18:15,312 - INFO - Added node: ÍÁÈÀ¼Øº¬Á¿ with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:18:15,312 - INFO - Added node: ÍÁÈÀpH with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:18:15,312 - INFO - Added node: Æ½¾ùÆøÎÂ with attributes {'type': 'ÆøºòÒò×Ó', 'source': 'ÆøÏóÕ¾¹Û²â'}
+2025-12-13 01:18:15,312 - INFO - Added node: ×Ü½µË®Á¿ with attributes {'type': 'ÆøºòÒò×Ó', 'source': 'ÆøÏóÕ¾¹Û²â'}
+2025-12-13 01:18:15,312 - INFO - Added node: Æ½¾ùÏà¶ÔÊª¶È with attributes {'type': 'ÆøºòÒò×Ó', 'source': 'ÆøÏóÕ¾¹Û²â'}
+2025-12-13 01:18:15,312 - INFO - Added edge from ÖÖÖ²Ãæ»ı to ×Ü²úÁ¿ with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:18:15,312 - INFO - Added edge from »¯·ÊÊ©ÓÃÁ¿ to µ¥Î»Ãæ»ı²úÁ¿ with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:18:15,312 - INFO - Added edge from µ¥Î»Ãæ»ı²úÁ¿ to ×Ü²úÁ¿ with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:18:15,312 - INFO - Added edge from µ¥Î»Ãæ»ı²úÁ¿ to Å©Ò©Ê©ÓÃÁ¿ with attributes {'relation': 'ÎŞ±ß', 'source': ''}
+2025-12-13 01:18:15,312 - INFO - Added edge from ×Ü½µË®Á¿ to Æ½¾ùÏà¶ÔÊª¶È with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:18:15,326 - INFO - ĞŞ¸ÄºóµÄ½Úµã²¼¾ÖÒÑ±£´æµ½ static/variety_layouts\×¯¼Ú.json
+2025-12-13 01:18:15,353 - INFO - Graph saved to static/variety_htmls\×¯¼Ú.html
+2025-12-13 01:18:15,355 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:15] "GET /regenerate_variety_html/×¯¼Ú HTTP/1.1" 200 -
+2025-12-13 01:18:15,363 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:15] "GET /static/variety_htmls/×¯¼Ú.html?1765559895356 HTTP/1.1" 200 -
+2025-12-13 01:18:15,382 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:15] "[33mGET /static/variety_htmls/lib/bindings/utils.js HTTP/1.1[0m" 404 -
+2025-12-13 01:18:25,146 - INFO - ĞŞ¸ÄºóµÄ½Úµã²¼¾ÖÒÑ±£´æµ½ static/layout.json
+2025-12-13 01:18:25,172 - INFO - Graph saved to static/modified_graph.html
+2025-12-13 01:18:25,201 - INFO - Graph saved to static/original_graph.html
+2025-12-13 01:18:25,204 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:25] "GET /?variety=×¯¼Ú HTTP/1.1" 200 -
+2025-12-13 01:18:25,232 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:25] "GET /static/script.js HTTP/1.1" 200 -
+2025-12-13 01:18:25,466 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:25] "GET /get_server_session HTTP/1.1" 200 -
+2025-12-13 01:18:25,780 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:25] "GET /get_varieties HTTP/1.1" 200 -
+2025-12-13 01:18:25,783 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:25] "GET /list_pending_changes HTTP/1.1" 200 -
+2025-12-13 01:18:26,040 - INFO - Added node: ÖÖÖ²Ãæ»ı with attributes {'type': '¹ÜÀí´ëÊ©', 'source': 'Å©³¡¹ÜÀí¼ÇÂ¼'}
+2025-12-13 01:18:26,041 - INFO - Added node: ×Ü²úÁ¿ with attributes {'type': '½á¹û±äÁ¿', 'source': 'ÊÕ»ñÍ³¼Æ'}
+2025-12-13 01:18:26,041 - INFO - Added node: »¯·ÊÊ©ÓÃÁ¿ with attributes {'type': '¹ÜÀí´ëÊ©', 'source': 'Å©³¡¹ÜÀí¼ÇÂ¼'}
+2025-12-13 01:18:26,041 - INFO - Added node: Å©Ò©Ê©ÓÃÁ¿ with attributes {'type': '¹ÜÀí´ëÊ©', 'source': 'Å©³¡¹ÜÀí¼ÇÂ¼'}
+2025-12-13 01:18:26,041 - INFO - Added node: µ¥Î»Ãæ»ı²úÁ¿ with attributes {'type': '½á¹û±äÁ¿', 'source': 'ÊÕ»ñÍ³¼Æ'}
+2025-12-13 01:18:26,041 - INFO - Added node: ÍÁÈÀµªº¬Á¿ with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:18:26,041 - INFO - Added node: ÍÁÈÀÁ×º¬Á¿ with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:18:26,041 - INFO - Added node: ÍÁÈÀ¼Øº¬Á¿ with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:18:26,041 - INFO - Added node: ÍÁÈÀpH with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:18:26,041 - INFO - Added node: Æ½¾ùÆøÎÂ with attributes {'type': 'ÆøºòÒò×Ó', 'source': 'ÆøÏóÕ¾¹Û²â'}
+2025-12-13 01:18:26,041 - INFO - Added node: ×Ü½µË®Á¿ with attributes {'type': 'ÆøºòÒò×Ó', 'source': 'ÆøÏóÕ¾¹Û²â'}
+2025-12-13 01:18:26,041 - INFO - Added node: Æ½¾ùÏà¶ÔÊª¶È with attributes {'type': 'ÆøºòÒò×Ó', 'source': 'ÆøÏóÕ¾¹Û²â'}
+2025-12-13 01:18:26,041 - INFO - Added edge from ÖÖÖ²Ãæ»ı to ×Ü²úÁ¿ with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:18:26,041 - INFO - Added edge from »¯·ÊÊ©ÓÃÁ¿ to µ¥Î»Ãæ»ı²úÁ¿ with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:18:26,041 - INFO - Added edge from µ¥Î»Ãæ»ı²úÁ¿ to ×Ü²úÁ¿ with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:18:26,041 - INFO - Added edge from µ¥Î»Ãæ»ı²úÁ¿ to Å©Ò©Ê©ÓÃÁ¿ with attributes {'relation': 'ÎŞ±ß', 'source': ''}
+2025-12-13 01:18:26,042 - INFO - Added edge from ×Ü½µË®Á¿ to Æ½¾ùÏà¶ÔÊª¶È with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:18:26,057 - INFO - ĞŞ¸ÄºóµÄ½Úµã²¼¾ÖÒÑ±£´æµ½ static/variety_layouts\×¯¼Ú.json
+2025-12-13 01:18:26,083 - INFO - Graph saved to static/variety_htmls\×¯¼Ú.html
+2025-12-13 01:18:26,083 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:26] "GET /regenerate_variety_html/×¯¼Ú HTTP/1.1" 200 -
+2025-12-13 01:18:26,091 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:26] "GET /static/variety_htmls/×¯¼Ú.html?1765559906086 HTTP/1.1" 200 -
+2025-12-13 01:18:26,434 - INFO - 127.0.0.1 - - [13/Dec/2025 01:18:26] "[33mGET /static/variety_htmls/lib/bindings/utils.js HTTP/1.1[0m" 404 -
+2025-12-13 01:20:36,611 - INFO - Added node: ÖÖÖ²Ãæ»ı with attributes {'type': '¹ÜÀí´ëÊ©', 'source': 'Å©³¡¹ÜÀí¼ÇÂ¼'}
+2025-12-13 01:20:36,611 - INFO - Added node: ×Ü²úÁ¿ with attributes {'type': '½á¹û±äÁ¿', 'source': 'ÊÕ»ñÍ³¼Æ'}
+2025-12-13 01:20:36,611 - INFO - Added node: »¯·ÊÊ©ÓÃÁ¿ with attributes {'type': '¹ÜÀí´ëÊ©', 'source': 'Å©³¡¹ÜÀí¼ÇÂ¼'}
+2025-12-13 01:20:36,611 - INFO - Added node: Å©Ò©Ê©ÓÃÁ¿ with attributes {'type': '¹ÜÀí´ëÊ©', 'source': 'Å©³¡¹ÜÀí¼ÇÂ¼'}
+2025-12-13 01:20:36,783 - INFO - Added node: µ¥Î»Ãæ»ı²úÁ¿ with attributes {'type': '½á¹û±äÁ¿', 'source': 'ÊÕ»ñÍ³¼Æ'}
+2025-12-13 01:20:36,792 - INFO - Added node: ÍÁÈÀµªº¬Á¿ with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:20:36,792 - INFO - Added node: ÍÁÈÀÁ×º¬Á¿ with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:20:36,792 - INFO - Added node: ÍÁÈÀ¼Øº¬Á¿ with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:20:36,792 - INFO - Added node: ÍÁÈÀpH with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:20:36,792 - INFO - Added node: Æ½¾ùÆøÎÂ with attributes {'type': 'ÆøºòÒò×Ó', 'source': 'ÆøÏóÕ¾¹Û²â'}
+2025-12-13 01:20:36,792 - INFO - Added node: ×Ü½µË®Á¿ with attributes {'type': 'ÆøºòÒò×Ó', 'source': 'ÆøÏóÕ¾¹Û²â'}
+2025-12-13 01:20:36,792 - INFO - Added node: Æ½¾ùÏà¶ÔÊª¶È with attributes {'type': 'ÆøºòÒò×Ó', 'source': 'ÆøÏóÕ¾¹Û²â'}
+2025-12-13 01:20:36,792 - INFO - Added edge from ÖÖÖ²Ãæ»ı to ×Ü²úÁ¿ with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:20:36,793 - INFO - Added edge from »¯·ÊÊ©ÓÃÁ¿ to µ¥Î»Ãæ»ı²úÁ¿ with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:20:36,793 - INFO - Added edge from µ¥Î»Ãæ»ı²úÁ¿ to ×Ü²úÁ¿ with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:20:36,793 - INFO - Added edge from µ¥Î»Ãæ»ı²úÁ¿ to Å©Ò©Ê©ÓÃÁ¿ with attributes {'relation': 'ÎŞ±ß', 'source': ''}
+2025-12-13 01:20:36,793 - INFO - Added edge from ×Ü½µË®Á¿ to Æ½¾ùÏà¶ÔÊª¶È with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:20:37,029 - INFO - ĞŞ¸ÄºóµÄ½Úµã²¼¾ÖÒÑ±£´æµ½ static/variety_layouts\×¯¼Ú.json
+2025-12-13 01:20:37,089 - INFO - Graph saved to static/variety_htmls\×¯¼Ú.html
+2025-12-13 01:20:37,090 - INFO - 127.0.0.1 - - [13/Dec/2025 01:20:37] "GET /regenerate_variety_html/×¯¼Ú HTTP/1.1" 200 -
+2025-12-13 01:20:37,192 - INFO - 127.0.0.1 - - [13/Dec/2025 01:20:37] "GET /static/variety_htmls/×¯¼Ú.html?1765560037093 HTTP/1.1" 200 -
+2025-12-13 01:20:37,557 - INFO - 127.0.0.1 - - [13/Dec/2025 01:20:37] "[33mGET /static/variety_htmls/lib/bindings/utils.js HTTP/1.1[0m" 404 -
+2025-12-13 01:20:38,070 - INFO - Added node: ÖÖÖ²Ãæ»ı with attributes {'type': '¹ÜÀí´ëÊ©', 'source': 'Å©³¡¹ÜÀí¼ÇÂ¼'}
+2025-12-13 01:20:38,071 - INFO - Added node: ×Ü²úÁ¿ with attributes {'type': '½á¹û±äÁ¿', 'source': 'ÊÕ»ñÍ³¼Æ'}
+2025-12-13 01:20:38,071 - INFO - Added node: »¯·ÊÊ©ÓÃÁ¿ with attributes {'type': '¹ÜÀí´ëÊ©', 'source': 'Å©³¡¹ÜÀí¼ÇÂ¼'}
+2025-12-13 01:20:38,071 - INFO - Added node: Å©Ò©Ê©ÓÃÁ¿ with attributes {'type': '¹ÜÀí´ëÊ©', 'source': 'Å©³¡¹ÜÀí¼ÇÂ¼'}
+2025-12-13 01:20:38,071 - INFO - Added node: µ¥Î»Ãæ»ı²úÁ¿ with attributes {'type': '½á¹û±äÁ¿', 'source': 'ÊÕ»ñÍ³¼Æ'}
+2025-12-13 01:20:38,071 - INFO - Added node: ÍÁÈÀµªº¬Á¿ with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:20:38,071 - INFO - Added node: ÍÁÈÀÁ×º¬Á¿ with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:20:38,071 - INFO - Added node: ÍÁÈÀ¼Øº¬Á¿ with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:20:38,071 - INFO - Added node: ÍÁÈÀpH with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:20:38,071 - INFO - Added node: Æ½¾ùÆøÎÂ with attributes {'type': 'ÆøºòÒò×Ó', 'source': 'ÆøÏóÕ¾¹Û²â'}
+2025-12-13 01:20:38,071 - INFO - Added node: ×Ü½µË®Á¿ with attributes {'type': 'ÆøºòÒò×Ó', 'source': 'ÆøÏóÕ¾¹Û²â'}
+2025-12-13 01:20:38,071 - INFO - Added node: Æ½¾ùÏà¶ÔÊª¶È with attributes {'type': 'ÆøºòÒò×Ó', 'source': 'ÆøÏóÕ¾¹Û²â'}
+2025-12-13 01:20:38,071 - INFO - Added edge from ÖÖÖ²Ãæ»ı to ×Ü²úÁ¿ with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:20:38,071 - INFO - Added edge from »¯·ÊÊ©ÓÃÁ¿ to µ¥Î»Ãæ»ı²úÁ¿ with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:20:38,071 - INFO - Added edge from µ¥Î»Ãæ»ı²úÁ¿ to ×Ü²úÁ¿ with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:20:38,071 - INFO - Added edge from µ¥Î»Ãæ»ı²úÁ¿ to Å©Ò©Ê©ÓÃÁ¿ with attributes {'relation': 'ÎŞ±ß', 'source': ''}
+2025-12-13 01:20:38,071 - INFO - Added edge from ×Ü½µË®Á¿ to Æ½¾ùÏà¶ÔÊª¶È with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:20:38,085 - INFO - ĞŞ¸ÄºóµÄ½Úµã²¼¾ÖÒÑ±£´æµ½ static\original_layout.json
+2025-12-13 01:20:38,104 - INFO - ĞŞ¸ÄºóµÄ½Úµã²¼¾ÖÒÑ±£´æµ½ static\modified_layout.json
+2025-12-13 01:20:38,129 - INFO - Graph saved to static/original_graph.html
+2025-12-13 01:20:38,278 - INFO - Graph saved to static/modified_graph.html
+2025-12-13 01:20:38,278 - INFO - 127.0.0.1 - - [13/Dec/2025 01:20:38] "POST /visualize_variety_in_both HTTP/1.1" 200 -
+2025-12-13 01:20:40,593 - INFO - 127.0.0.1 - - [13/Dec/2025 01:20:40] "GET /index HTTP/1.1" 200 -
+2025-12-13 01:20:40,804 - INFO - 127.0.0.1 - - [13/Dec/2025 01:20:40] "GET /lib/tom-select/tom-select.css HTTP/1.1" 200 -
+2025-12-13 01:20:40,842 - INFO - 127.0.0.1 - - [13/Dec/2025 01:20:40] "GET /lib/tom-select/tom-select.complete.min.js HTTP/1.1" 200 -
+2025-12-13 01:20:41,067 - INFO - 127.0.0.1 - - [13/Dec/2025 01:20:41] "GET /static/original_graph.html?v= HTTP/1.1" 200 -
+2025-12-13 01:20:41,291 - INFO - 127.0.0.1 - - [13/Dec/2025 01:20:41] "GET /static/script.js HTTP/1.1" 200 -
+2025-12-13 01:20:41,483 - INFO - 127.0.0.1 - - [13/Dec/2025 01:20:41] "[33mGET /static/lib/bindings/utils.js HTTP/1.1[0m" 404 -
+2025-12-13 01:20:41,949 - INFO - 127.0.0.1 - - [13/Dec/2025 01:20:41] "GET /get_server_session HTTP/1.1" 200 -
+2025-12-13 01:20:42,188 - INFO - Added node: ÖÖÖ²Ãæ»ı with attributes {'type': '¹ÜÀí´ëÊ©', 'source': 'Å©³¡¹ÜÀí¼ÇÂ¼'}
+2025-12-13 01:20:42,188 - INFO - Added node: ×Ü²úÁ¿ with attributes {'type': '½á¹û±äÁ¿', 'source': 'ÊÕ»ñÍ³¼Æ'}
+2025-12-13 01:20:42,188 - INFO - Added node: »¯·ÊÊ©ÓÃÁ¿ with attributes {'type': '¹ÜÀí´ëÊ©', 'source': 'Å©³¡¹ÜÀí¼ÇÂ¼'}
+2025-12-13 01:20:42,188 - INFO - Added node: Å©Ò©Ê©ÓÃÁ¿ with attributes {'type': '¹ÜÀí´ëÊ©', 'source': 'Å©³¡¹ÜÀí¼ÇÂ¼'}
+2025-12-13 01:20:42,188 - INFO - Added node: µ¥Î»Ãæ»ı²úÁ¿ with attributes {'type': '½á¹û±äÁ¿', 'source': 'ÊÕ»ñÍ³¼Æ'}
+2025-12-13 01:20:42,188 - INFO - Added node: ÍÁÈÀµªº¬Á¿ with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:20:42,188 - INFO - Added node: ÍÁÈÀÁ×º¬Á¿ with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:20:42,190 - INFO - Added node: ÍÁÈÀ¼Øº¬Á¿ with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:20:42,190 - INFO - Added node: ÍÁÈÀpH with attributes {'type': 'ÍÁÈÀĞÔÖÊ', 'source': 'ÍÁÈÀ¼ì²â'}
+2025-12-13 01:20:42,190 - INFO - Added node: Æ½¾ùÆøÎÂ with attributes {'type': 'ÆøºòÒò×Ó', 'source': 'ÆøÏóÕ¾¹Û²â'}
+2025-12-13 01:20:42,190 - INFO - Added node: ×Ü½µË®Á¿ with attributes {'type': 'ÆøºòÒò×Ó', 'source': 'ÆøÏóÕ¾¹Û²â'}
+2025-12-13 01:20:42,190 - INFO - Added node: Æ½¾ùÏà¶ÔÊª¶È with attributes {'type': 'ÆøºòÒò×Ó', 'source': 'ÆøÏóÕ¾¹Û²â'}
+2025-12-13 01:20:42,190 - INFO - Added edge from ÖÖÖ²Ãæ»ı to ×Ü²úÁ¿ with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:20:42,190 - INFO - Added edge from »¯·ÊÊ©ÓÃÁ¿ to µ¥Î»Ãæ»ı²úÁ¿ with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:20:42,190 - INFO - Added edge from µ¥Î»Ãæ»ı²úÁ¿ to ×Ü²úÁ¿ with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:20:42,190 - INFO - Added edge from µ¥Î»Ãæ»ı²úÁ¿ to Å©Ò©Ê©ÓÃÁ¿ with attributes {'relation': 'ÎŞ±ß', 'source': ''}
+2025-12-13 01:20:42,191 - INFO - Added edge from ×Ü½µË®Á¿ to Æ½¾ùÏà¶ÔÊª¶È with attributes {'relation': 'ÕıÏò', 'source': 'Å©Ñ§³£Ê¶ÏÈÑé'}
+2025-12-13 01:20:42,221 - INFO - ĞŞ¸ÄºóµÄ½Úµã²¼¾ÖÒÑ±£´æµ½ static\original_layout.json
+2025-12-13 01:20:42,511 - INFO - ĞŞ¸ÄºóµÄ½Úµã²¼¾ÖÒÑ±£´æµ½ static\modified_layout.json
+2025-12-13 01:20:42,557 - INFO - Graph saved to static/original_graph.html
+2025-12-13 01:20:42,679 - INFO - Graph saved to static/modified_graph.html
+2025-12-13 01:20:42,690 - INFO - 127.0.0.1 - - [13/Dec/2025 01:20:42] "POST /visualize_variety_in_both HTTP/1.1" 200 -
+2025-12-13 01:20:42,705 - INFO - 127.0.0.1 - - [13/Dec/2025 01:20:42] "GET /static/original_graph.html?v=1765560042692 HTTP/1.1" 200 -
+2025-12-13 01:20:43,074 - INFO - 127.0.0.1 - - [13/Dec/2025 01:20:43] "[33mGET /static/lib/bindings/utils.js HTTP/1.1[0m" 404 -
+2025-12-13 01:20:43,075 - INFO - 127.0.0.1 - - [13/Dec/2025 01:20:43] "GET /static/modified_graph.html?v=1765560042693 HTTP/1.1" 200 -
+2025-12-13 01:20:43,493 - INFO - 127.0.0.1 - - [13/Dec/2025 01:20:43] "[33mGET /static/lib/bindings/utils.js HTTP/1.1[0m" 404 -
+2025-12-13 01:20:47,847 - INFO - 127.0.0.1 - - [13/Dec/2025 01:20:47] "GET /get_nodes HTTP/1.1" 200 -
+2025-12-13 01:21:01,255 - INFO - 127.0.0.1 - - [13/Dec/2025 01:21:01] "GET /get_nodes HTTP/1.1" 200 -
+2025-12-13 01:24:56,960 - INFO - 127.0.0.1 - - [13/Dec/2025 01:24:56] "GET /get_nodes HTTP/1.1" 200 -
