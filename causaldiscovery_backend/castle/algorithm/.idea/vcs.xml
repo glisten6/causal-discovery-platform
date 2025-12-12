@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/avici/avici" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/gcastle/trustworthyAI" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/self_compatibility/causal-self-compatibility" vcs="Git" />
+  </component>
+</project>

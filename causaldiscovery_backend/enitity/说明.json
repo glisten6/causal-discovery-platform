@@ -1,0 +1,25 @@
+{
+
+"nodes": [
+  {
+    "node_name": "",
+    "attrs": {}
+  },
+
+  {}
+
+],
+
+  "edges": [
+
+    {"start_node": "",
+      "end_node": "",
+      "relation": "",
+      "source": ""
+    },
+
+    {}
+
+  ]
+
+}

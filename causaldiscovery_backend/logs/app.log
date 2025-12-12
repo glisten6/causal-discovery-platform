@@ -1,0 +1,63 @@
+2025-03-10 13:20:06,543 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-03-10 13:20:06,543 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-10 13:20:06,545 - INFO -  * Restarting with stat
+2025-03-10 13:20:09,315 - WARNING -  * Debugger is active!
+2025-03-10 13:20:09,327 - INFO -  * Debugger PIN: 958-219-832
+2025-03-10 13:20:12,515 - INFO - 127.0.0.1 - - [10/Mar/2025 13:20:12] "[31m[1mGET /causal_discovery_use_file?form HTTP/1.1[0m" 400 -
+2025-03-10 13:20:23,601 - INFO - Learning structure using 'NOTEARS' optimisation.
+2025-03-10 13:20:23,601 - INFO - PyTorch backend for NotearsMLP is running on 'CPU'
+2025-03-10 13:20:49,036 - INFO - 127.0.0.1 - - [10/Mar/2025 13:20:49] "GET /causal_discovery_use_file?form HTTP/1.1" 200 -
+2025-03-10 13:23:33,255 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-10 13:23:33,692 - INFO -  * Restarting with stat
+2025-03-10 13:23:36,253 - WARNING -  * Debugger is active!
+2025-03-10 13:23:36,259 - INFO -  * Debugger PIN: 958-219-832
+2025-03-10 13:23:36,333 - INFO - Learning structure using 'NOTEARS' optimisation.
+2025-03-10 13:23:36,333 - INFO - PyTorch backend for NotearsMLP is running on 'CPU'
+2025-03-10 13:23:54,494 - INFO - 127.0.0.1 - - [10/Mar/2025 13:23:54] "GET /causal_discovery_use_file?form HTTP/1.1" 200 -
+2025-03-10 13:26:05,691 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-10 13:26:06,071 - INFO -  * Restarting with stat
+2025-03-10 13:26:08,557 - WARNING -  * Debugger is active!
+2025-03-10 13:26:08,560 - INFO -  * Debugger PIN: 958-219-832
+2025-03-10 13:26:08,594 - INFO - Learning structure using 'NOTEARS' optimisation.
+2025-03-10 13:26:08,594 - INFO - PyTorch backend for NotearsMLP is running on 'CPU'
+2025-03-10 13:26:26,122 - INFO - 127.0.0.1 - - [10/Mar/2025 13:26:26] "GET /causal_discovery_use_file?form HTTP/1.1" 200 -
+2025-03-10 13:27:23,855 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-10 13:27:24,283 - INFO -  * Restarting with stat
+2025-03-10 13:27:27,217 - WARNING -  * Debugger is active!
+2025-03-10 13:27:27,221 - INFO -  * Debugger PIN: 958-219-832
+2025-03-10 13:31:58,743 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-10 13:31:59,036 - INFO -  * Restarting with stat
+2025-03-10 13:32:01,653 - WARNING -  * Debugger is active!
+2025-03-10 13:32:01,656 - INFO -  * Debugger PIN: 958-219-832
+2025-03-10 13:32:01,710 - INFO - Learning structure using 'NOTEARS' optimisation.
+2025-03-10 13:32:01,711 - INFO - PyTorch backend for NotearsMLP is running on 'CPU'
+2025-03-10 13:32:12,812 - INFO - 127.0.0.1 - - [10/Mar/2025 13:32:12] "GET /causal_discovery_use_file?form HTTP/1.1" 200 -
+2025-03-10 13:32:46,950 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-10 13:32:47,377 - INFO -  * Restarting with stat
+2025-03-10 13:32:50,389 - WARNING -  * Debugger is active!
+2025-03-10 13:32:50,394 - INFO -  * Debugger PIN: 958-219-832
+2025-03-10 13:32:50,433 - INFO - Learning structure using 'NOTEARS' optimisation.
+2025-03-10 13:32:50,434 - INFO - PyTorch backend for NotearsMLP is running on 'CPU'
+2025-03-10 13:33:01,689 - INFO - 127.0.0.1 - - [10/Mar/2025 13:33:01] "GET /causal_discovery_use_file?form HTTP/1.1" 200 -
+2025-03-10 13:33:26,617 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-10 13:33:27,044 - INFO -  * Restarting with stat
+2025-03-10 13:33:29,981 - WARNING -  * Debugger is active!
+2025-03-10 13:33:29,986 - INFO -  * Debugger PIN: 958-219-832
+2025-03-16 03:01:01,313 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-03-16 03:01:01,313 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-16 03:01:01,315 - INFO -  * Restarting with stat
+2025-03-16 03:01:04,218 - WARNING -  * Debugger is active!
+2025-03-16 03:01:04,223 - INFO -  * Debugger PIN: 958-219-832
+2025-03-16 03:01:11,645 - INFO - Learning structure using 'NOTEARS' optimisation.
+2025-03-16 03:01:11,646 - INFO - 127.0.0.1 - - [16/Mar/2025 03:01:11] "GET /causal_discovery_use_file?form HTTP/1.1" 200 -
+2025-03-16 03:02:33,597 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\causalnex\\structure\\pytorch\\notears.py', reloading
+2025-03-16 03:02:33,948 - INFO -  * Restarting with stat
+2025-03-16 03:02:36,787 - WARNING -  * Debugger is active!
+2025-03-16 03:02:36,792 - INFO -  * Debugger PIN: 958-219-832
+2025-03-16 03:02:36,830 - INFO - Learning structure using 'NOTEARS' optimisation.
+2025-03-16 03:02:36,831 - INFO - PyTorch backend for NotearsMLP is running on 'CPU'
+2025-03-16 03:02:57,228 - INFO - 127.0.0.1 - - [16/Mar/2025 03:02:57] "GET /causal_discovery_use_file?form HTTP/1.1" 200 -
+2025-03-16 03:18:39,402 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\causalnex\\structure\\pytorch\\notears.py', reloading
+2025-03-16 03:18:39,795 - INFO -  * Restarting with stat

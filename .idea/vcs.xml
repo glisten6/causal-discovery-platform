@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/causal_web_app-main_merged_v4" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/causaldiscovery_backend/algorithm/avici/avici" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/causaldiscovery_backend/algorithm/gcastle/trustworthyAI" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/causaldiscovery_backend/algorithm/self_compatibility/causal-self-compatibility" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/causaldiscovery_backend/castle/algorithm/avici/avici" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/causaldiscovery_backend/castle/algorithm/gcastle/trustworthyAI" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/causaldiscovery_backend/castle/algorithm/self_compatibility/causal-self-compatibility" vcs="Git" />
+  </component>
+</project>

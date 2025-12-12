@@ -1,0 +1,7 @@
+﻿Method Comparison,SHD Difference,Precision Difference,Recall Difference,F1 Difference
+No_Prior vs Active_Constraints,30,0.09089999999999998,0.35300000000000004,0.4317
+No_Prior vs Inactive_Constraints,0,0.0,0.0,0.0
+No_Prior vs Both_Constraints,29,0.09089999999999998,0.3412,0.42069999999999996
+Active_Constraints vs Inactive_Constraints,30,0.09089999999999998,0.35300000000000004,0.4317
+Active_Constraints vs Both_Constraints,1,0.0,0.011800000000000033,0.01100000000000001
+Inactive_Constraints vs Both_Constraints,29,0.09089999999999998,0.3412,0.42069999999999996

@@ -1,0 +1,5 @@
+﻿,no_prior_vs_active,no_prior_vs_inactive,no_prior_vs_both,active_vs_inactive,active_vs_both,inactive_vs_both,true_vs_no_prior,true_vs_active,true_vs_inactive,true_vs_both
+"n=15,e=60",20,0,19,20,1,19,43,23,43,24
+"n=15,e=90",30,0,29,30,1,29,75,45,75,46
+"n=20,e=80",33,1,35,32,2,34,65,32,64,30
+"n=20,e=120",48,0,48,48,0,48,102,54,102,54

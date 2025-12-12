@@ -1,0 +1,116 @@
+测试配置: 节点数量 = 15, edge = 60
+2025-05-14 14:43:08,520 - d:\data\python_project\causal_discovery\algorithm\gcastle\trustworthyAI\gcastle\castle\datasets\simulator.py[line:270] - INFO: Finished synthetic dataset
+没有先验因果图修正的结果
+2025-05-14 14:43:08,521 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:151] - INFO: GPU is unavailable.
+2025-05-14 14:43:08,522 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:274] - INFO: [start]: n=2000, d=15, iter_=100, h_=1e-08, rho_=1e+16
+2025-05-14 14:43:20,724 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:286] - INFO: FINISHED
+{'fdr': 0.0, 'tpr': 0.2037, 'fpr': 0.0, 'shd': 43, 'nnz': 11, 'precision': 1.0, 'recall': 0.2037, 'F1': 0.3385, 'gscore': 0.2037}
+使用先验因果图进行修正的结果
+将先验因果图转化为惩罚约束
+有向边约束
+2025-05-14 14:43:21,067 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:151] - INFO: GPU is unavailable.
+2025-05-14 14:43:21,069 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:274] - INFO: [start]: n=2000, d=15, iter_=100, h_=1e-08, rho_=1e+16
+2025-05-14 14:43:44,605 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:286] - INFO: FINISHED
+{'fdr': 0.0, 'tpr': 0.5556, 'fpr': 0.0, 'shd': 24, 'nnz': 30, 'precision': 1.0, 'recall': 0.5556, 'F1': 0.7143, 'gscore': 0.5556}
+使用先验因果图进行修正的结果
+将先验因果图转化为惩罚约束
+无边约束
+2025-05-14 14:43:44,699 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:151] - INFO: GPU is unavailable.
+2025-05-14 14:43:44,700 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:274] - INFO: [start]: n=2000, d=15, iter_=100, h_=1e-08, rho_=1e+16
+2025-05-14 14:43:57,222 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:286] - INFO: FINISHED
+{'fdr': 0.0, 'tpr': 0.2037, 'fpr': 0.0, 'shd': 43, 'nnz': 11, 'precision': 1.0, 'recall': 0.2037, 'F1': 0.3385, 'gscore': 0.2037}
+使用先验因果图进行修正的结果
+将先验因果图转化为惩罚约束
+同时存在有边约束和无边约束
+2025-05-14 14:43:57,320 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:151] - INFO: GPU is unavailable.
+2025-05-14 14:43:57,321 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:274] - INFO: [start]: n=2000, d=15, iter_=100, h_=1e-08, rho_=1e+16
+2025-05-14 14:44:22,203 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:286] - INFO: FINISHED
+{'fdr': 0.0, 'tpr': 0.5556, 'fpr': 0.0, 'shd': 24, 'nnz': 30, 'precision': 1.0, 'recall': 0.5556, 'F1': 0.7143, 'gscore': 0.5556}
+
+测试配置: 节点数量 = 15, edge = 90
+2025-05-14 14:46:31,341 - d:\data\python_project\causal_discovery\algorithm\gcastle\trustworthyAI\gcastle\castle\datasets\simulator.py[line:270] - INFO: Finished synthetic dataset
+没有先验因果图修正的结果
+2025-05-14 14:46:31,356 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:151] - INFO: GPU is unavailable.
+2025-05-14 14:46:31,360 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:274] - INFO: [start]: n=2000, d=15, iter_=100, h_=1e-08, rho_=1e+16
+2025-05-14 14:47:15,301 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:286] - INFO: FINISHED
+{'fdr': 0.0909, 'tpr': 0.1176, 'fpr': 0.05, 'shd': 75, 'nnz': 11, 'precision': 0.9091, 'recall': 0.1176, 'F1': 0.2083, 'gscore': 0.1059}
+使用先验因果图进行修正的结果
+将先验因果图转化为惩罚约束
+有向边约束
+2025-05-14 14:47:15,629 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:151] - INFO: GPU is unavailable.
+2025-05-14 14:47:15,631 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:274] - INFO: [start]: n=2000, d=15, iter_=100, h_=1e-08, rho_=1e+16
+2025-05-14 14:49:47,265 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:286] - INFO: FINISHED
+{'fdr': 0.0, 'tpr': 0.4471, 'fpr': 0.0, 'shd': 47, 'nnz': 38, 'precision': 1.0, 'recall': 0.4471, 'F1': 0.6179, 'gscore': 0.4471}
+使用先验因果图进行修正的结果
+将先验因果图转化为惩罚约束
+无边约束
+2025-05-14 14:49:47,792 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:151] - INFO: GPU is unavailable.
+2025-05-14 14:49:47,797 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:274] - INFO: [start]: n=2000, d=15, iter_=100, h_=1e-08, rho_=1e+16
+2025-05-14 14:50:12,346 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:286] - INFO: FINISHED
+{'fdr': 0.0909, 'tpr': 0.1176, 'fpr': 0.05, 'shd': 75, 'nnz': 11, 'precision': 0.9091, 'recall': 0.1176, 'F1': 0.2083, 'gscore': 0.1059}
+使用先验因果图进行修正的结果
+将先验因果图转化为惩罚约束
+同时存在有边约束和无边约束
+2025-05-14 14:50:12,450 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:151] - INFO: GPU is unavailable.
+2025-05-14 14:50:12,451 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:274] - INFO: [start]: n=2000, d=15, iter_=100, h_=1e-08, rho_=1e+16
+2025-05-14 14:50:49,923 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:286] - INFO: FINISHED
+{'fdr': 0.0, 'tpr': 0.4706, 'fpr': 0.0, 'shd': 45, 'nnz': 40, 'precision': 1.0, 'recall': 0.4706, 'F1': 0.64, 'gscore': 0.4706}
+
+测试配置: 节点数量 = 20, edge = 80
+2025-05-14 14:53:55,140 - d:\data\python_project\causal_discovery\algorithm\gcastle\trustworthyAI\gcastle\castle\datasets\simulator.py[line:270] - INFO: Finished synthetic dataset
+没有先验因果图修正的结果
+2025-05-14 14:53:55,148 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:151] - INFO: GPU is unavailable.
+2025-05-14 14:53:55,153 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:274] - INFO: [start]: n=2000, d=20, iter_=100, h_=1e-08, rho_=1e+16
+2025-05-14 14:55:05,982 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:286] - INFO: FINISHED
+{'fdr': 0.1, 'tpr': 0.2195, 'fpr': 0.0185, 'shd': 65, 'nnz': 20, 'precision': 0.9, 'recall': 0.2195, 'F1': 0.3529, 'gscore': 0.1951}
+使用先验因果图进行修正的结果
+将先验因果图转化为惩罚约束
+有向边约束
+2025-05-14 14:55:06,445 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:151] - INFO: GPU is unavailable.
+2025-05-14 14:55:06,450 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:274] - INFO: [start]: n=2000, d=20, iter_=100, h_=1e-08, rho_=1e+16
+2025-05-14 14:58:36,995 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:286] - INFO: FINISHED
+{'fdr': 0.037, 'tpr': 0.6341, 'fpr': 0.0185, 'shd': 32, 'nnz': 54, 'precision': 0.963, 'recall': 0.6341, 'F1': 0.7647, 'gscore': 0.6098}
+使用先验因果图进行修正的结果
+将先验因果图转化为惩罚约束
+无边约束
+2025-05-14 14:58:37,557 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:151] - INFO: GPU is unavailable.
+2025-05-14 14:58:37,562 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:274] - INFO: [start]: n=2000, d=20, iter_=100, h_=1e-08, rho_=1e+16
+2025-05-14 14:59:36,745 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:286] - INFO: FINISHED
+{'fdr': 0.05, 'tpr': 0.2317, 'fpr': 0.0093, 'shd': 64, 'nnz': 20, 'precision': 0.95, 'recall': 0.2317, 'F1': 0.3725, 'gscore': 0.2195}
+使用先验因果图进行修正的结果
+将先验因果图转化为惩罚约束
+同时存在有边约束和无边约束
+2025-05-14 14:59:37,331 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:151] - INFO: GPU is unavailable.
+2025-05-14 14:59:37,337 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:274] - INFO: [start]: n=2000, d=20, iter_=100, h_=1e-08, rho_=1e+16
+2025-05-14 15:02:45,734 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:286] - INFO: FINISHED
+{'fdr': 0.0364, 'tpr': 0.6463, 'fpr': 0.0185, 'shd': 31, 'nnz': 55, 'precision': 0.9636, 'recall': 0.6463, 'F1': 0.7737, 'gscore': 0.622}
+
+测试配置: 节点数量 = 20, edge = 120
+2025-05-14 15:07:34,320 - d:\data\python_project\causal_discovery\algorithm\gcastle\trustworthyAI\gcastle\castle\datasets\simulator.py[line:270] - INFO: Finished synthetic dataset
+没有先验因果图修正的结果
+2025-05-14 15:07:34,327 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:151] - INFO: GPU is unavailable.
+2025-05-14 15:07:34,333 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:274] - INFO: [start]: n=2000, d=20, iter_=100, h_=1e-08, rho_=1e+16
+2025-05-14 15:09:28,037 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:286] - INFO: FINISHED
+{'fdr': 0.0556, 'tpr': 0.1429, 'fpr': 0.0141, 'shd': 102, 'nnz': 18, 'precision': 0.9444, 'recall': 0.1429, 'F1': 0.2482, 'gscore': 0.1345}
+使用先验因果图进行修正的结果
+将先验因果图转化为惩罚约束
+有向边约束
+2025-05-14 15:09:28,689 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:151] - INFO: GPU is unavailable.
+2025-05-14 15:09:28,695 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:274] - INFO: [start]: n=2000, d=20, iter_=100, h_=1e-08, rho_=1e+16
+2025-05-14 15:10:52,373 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:286] - INFO: FINISHED
+{'fdr': 0.0303, 'tpr': 0.5378, 'fpr': 0.0282, 'shd': 55, 'nnz': 66, 'precision': 0.9697, 'recall': 0.5378, 'F1': 0.6919, 'gscore': 0.521}
+使用先验因果图进行修正的结果
+将先验因果图转化为惩罚约束
+无边约束
+2025-05-14 15:10:52,476 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:151] - INFO: GPU is unavailable.
+2025-05-14 15:10:52,477 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:274] - INFO: [start]: n=2000, d=20, iter_=100, h_=1e-08, rho_=1e+16
+2025-05-14 15:11:18,164 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:286] - INFO: FINISHED
+{'fdr': 0.0556, 'tpr': 0.1429, 'fpr': 0.0141, 'shd': 102, 'nnz': 18, 'precision': 0.9444, 'recall': 0.1429, 'F1': 0.2482, 'gscore': 0.1345}
+使用先验因果图进行修正的结果
+将先验因果图转化为惩罚约束
+同时存在有边约束和无边约束
+2025-05-14 15:11:18,344 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:151] - INFO: GPU is unavailable.
+2025-05-14 15:11:18,345 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:274] - INFO: [start]: n=2000, d=20, iter_=100, h_=1e-08, rho_=1e+16
+2025-05-14 15:12:08,826 - D:\software\anaconda2024\envs\causal_discovery\lib\site-packages\castle\algorithms\gradient\notears\torch\nonlinear.py[line:286] - INFO: FINISHED
+{'fdr': 0.0154, 'tpr': 0.5378, 'fpr': 0.0141, 'shd': 55, 'nnz': 65, 'precision': 0.9846, 'recall': 0.5378, 'F1': 0.6957, 'gscore': 0.5294}
+保存图表

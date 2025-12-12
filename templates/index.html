@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 禁止缓存的相关设置 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Causal Graph</title>
+    <style>
+        #graph-container {
+            margin-bottom: 20px;
+        }
+        #controls {
+            padding: 10px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+        }
+        input, button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Causal Graph Editor</h1>
+
+    <!-- 图表容器 -->
+    <div id="graph-container">
+        <iframe id="graphIframe"
+                src="{{ url_for('static', filename='causal_graph.html') }}?v={{ version }}"
+                width="100%"
+                height="600px"></iframe>
+    </div>
+
+    <!-- 操作控制 -->
+    <div id="controls">
+        <!-- 节点操作 -->
+        <h2>Node Operations</h2>
+        <div>
+            <label>Node Name: <input type="text" id="node_name" placeholder="Node Name"></label>
+            <label>Type: <input type="text" id="node_type" placeholder="Observable | Result"></label>
+            <label>Source: <input type="text" id="node_source" placeholder="Survey | Expert"></label>
+            <button onclick="addNode()">Add Node</button>
+            <button onclick="removeNode()">Remove Node</button>
+            <button onclick="updateNode()">Update Node</button>
+            <button onclick="findNode()">Find Node</button>
+        </div>
+
+        <!-- 边操作 -->
+        <h2>Edge Operations</h2>
+        <div>
+            <label>Start Node: <input type="text" id="start_node" placeholder="Start Node"></label>
+            <label>End Node: <input type="text" id="end_node" placeholder="End Node"></label>
+            <label>Relation: <input type="text" id="edge_relation" placeholder="Positive | Negative"></label>
+            <label>Source: <input type="text" id="edge_source" placeholder="Expert | Survey"></label>
+            <button onclick="addEdge()">Add Edge</button>
+            <button onclick="removeEdge()">Remove Edge</button>
+            <button onclick="updateEdge()">Update Edge</button>
+            <button onclick="findEdge()">Find Edge</button>
+        </div>
+
+        <!-- 可视化 -->
+        <h2>Visualize</h2>
+        <button onclick="visualize()">Refresh Graph</button>
+    </div>
+
+    <!-- JavaScript 文件 -->
+    <script>
+        // 将因果图文件路径传递给 JavaScript
+        const causalGraphURL = "{{ url_for('static', filename='causal_graph.html') }}";
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

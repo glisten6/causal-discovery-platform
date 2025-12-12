@@ -1,0 +1,5 @@
+﻿Method,SHD vs True_Graph,Precision vs True_Graph,Recall vs True_Graph,F1 vs True_Graph,FDR vs True_Graph,TPR vs True_Graph,FPR vs True_Graph
+No_Prior,43,1.0,0.2037,0.3385,0.0,0.2037,0.0
+Active_Constraints,23,1.0,0.5741,0.7294,0.0,0.5741,0.0
+Inactive_Constraints,43,1.0,0.2037,0.3385,0.0,0.2037,0.0
+Both_Constraints,24,0.9688,0.5741,0.7209,0.0312,0.5741,0.0196

@@ -1,0 +1,283 @@
+2025-03-07 16:47:23,562 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-03-07 16:47:23,562 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-07 16:47:23,563 - INFO -  * Restarting with stat
+2025-03-07 16:47:26,022 - WARNING -  * Debugger is active!
+2025-03-07 16:47:26,025 - INFO -  * Debugger PIN: 958-219-832
+2025-03-07 16:54:53,967 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\app.py', reloading
+2025-03-07 16:54:54,306 - INFO -  * Restarting with stat
+2025-03-07 16:54:57,225 - WARNING -  * Debugger is active!
+2025-03-07 16:54:57,230 - INFO -  * Debugger PIN: 958-219-832
+2025-03-07 16:56:36,062 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\app.py', reloading
+2025-03-07 16:56:37,158 - INFO -  * Restarting with stat
+2025-03-07 16:56:40,395 - WARNING -  * Debugger is active!
+2025-03-07 16:56:40,399 - INFO -  * Debugger PIN: 958-219-832
+2025-03-07 16:56:41,457 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\app.py', reloading
+2025-03-07 16:56:41,742 - INFO -  * Restarting with stat
+2025-03-07 17:05:30,120 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-03-07 17:05:30,120 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-07 17:05:30,121 - INFO -  * Restarting with stat
+2025-03-07 17:05:32,595 - WARNING -  * Debugger is active!
+2025-03-07 17:05:32,598 - INFO -  * Debugger PIN: 958-219-832
+2025-03-07 17:05:48,751 - INFO - 127.0.0.1 - - [07/Mar/2025 17:05:48] "[33mGET / HTTP/1.1[0m" 404 -
+2025-03-07 17:05:49,228 - INFO - 127.0.0.1 - - [07/Mar/2025 17:05:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-07 17:07:06,034 - INFO - 127.0.0.1 - - [07/Mar/2025 17:07:06] "[33mGET / HTTP/1.1[0m" 404 -
+2025-03-07 17:07:57,504 - INFO - 127.0.0.1 - - [07/Mar/2025 17:07:57] "[33mGET / HTTP/1.1[0m" 404 -
+2025-03-07 17:07:59,482 - INFO - 127.0.0.1 - - [07/Mar/2025 17:07:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-07 17:09:44,002 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\app.py', reloading
+2025-03-07 17:09:44,341 - INFO -  * Restarting with stat
+2025-03-07 17:09:47,229 - WARNING -  * Debugger is active!
+2025-03-07 17:09:47,233 - INFO -  * Debugger PIN: 958-219-832
+2025-03-07 17:09:47,276 - INFO - 127.0.0.1 - - [07/Mar/2025 17:09:47] "GET / HTTP/1.1" 200 -
+2025-03-07 17:09:47,338 - INFO - 127.0.0.1 - - [07/Mar/2025 17:09:47] "[33mGET /static/script.js HTTP/1.1[0m" 404 -
+2025-03-07 17:09:47,503 - INFO - 127.0.0.1 - - [07/Mar/2025 17:09:47] "[33mGET /static/causal_graph.html?v=1741338587.2609742 HTTP/1.1[0m" 404 -
+2025-03-07 17:10:29,649 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\app.py', reloading
+2025-03-07 17:10:29,976 - INFO -  * Restarting with stat
+2025-03-07 17:27:34,915 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-03-07 17:27:34,916 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-07 17:27:34,917 - INFO -  * Restarting with stat
+2025-03-07 17:27:37,681 - WARNING -  * Debugger is active!
+2025-03-07 17:27:37,684 - INFO -  * Debugger PIN: 958-219-832
+2025-03-07 17:28:16,930 - INFO - 127.0.0.1 - - [07/Mar/2025 17:28:16] "[33mGET / HTTP/1.1[0m" 404 -
+2025-03-07 17:28:31,078 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\app.py', reloading
+2025-03-07 17:28:31,474 - INFO -  * Restarting with stat
+2025-03-07 17:28:34,565 - WARNING -  * Debugger is active!
+2025-03-07 17:28:34,570 - INFO -  * Debugger PIN: 958-219-832
+2025-03-07 17:28:34,593 - INFO - 127.0.0.1 - - [07/Mar/2025 17:28:34] "[31m[1mGET /causal_discovery_use_file HTTP/1.1[0m" 400 -
+2025-03-07 17:30:55,990 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\service\\discover_pure_analysis.py', reloading
+2025-03-07 17:30:56,315 - INFO -  * Restarting with stat
+2025-03-07 17:30:59,364 - WARNING -  * Debugger is active!
+2025-03-07 17:30:59,369 - INFO -  * Debugger PIN: 958-219-832
+2025-03-07 17:32:27,107 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\service\\discover_pure_analysis.py', reloading
+2025-03-07 17:32:27,395 - INFO -  * Restarting with stat
+2025-03-07 17:32:30,334 - WARNING -  * Debugger is active!
+2025-03-07 17:32:30,339 - INFO -  * Debugger PIN: 958-219-832
+2025-03-07 17:32:36,568 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\service\\discover_pure_analysis.py', reloading
+2025-03-07 17:32:36,897 - INFO -  * Restarting with stat
+2025-03-07 17:32:39,648 - WARNING -  * Debugger is active!
+2025-03-07 17:32:39,652 - INFO -  * Debugger PIN: 958-219-832
+2025-03-07 17:34:42,547 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\service\\discover_pure_analysis.py', reloading
+2025-03-07 17:34:42,821 - INFO -  * Restarting with stat
+2025-03-07 17:34:45,842 - WARNING -  * Debugger is active!
+2025-03-07 17:34:45,846 - INFO -  * Debugger PIN: 958-219-832
+2025-03-07 17:34:52,087 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\service\\discover_pure_analysis.py', reloading
+2025-03-07 17:34:52,383 - INFO -  * Restarting with stat
+2025-03-07 17:34:55,594 - WARNING -  * Debugger is active!
+2025-03-07 17:34:55,599 - INFO -  * Debugger PIN: 958-219-832
+2025-03-07 17:36:34,173 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\service\\discover_pure_analysis.py', reloading
+2025-03-07 17:36:34,479 - INFO -  * Restarting with stat
+2025-03-07 17:36:37,223 - WARNING -  * Debugger is active!
+2025-03-07 17:36:37,228 - INFO -  * Debugger PIN: 958-219-832
+2025-03-08 15:28:36,963 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-03-08 15:28:36,963 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-08 15:28:36,965 - INFO -  * Restarting with stat
+2025-03-08 15:28:39,481 - WARNING -  * Debugger is active!
+2025-03-08 15:28:39,484 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 15:31:42,509 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\app.py', reloading
+2025-03-08 15:31:42,838 - INFO -  * Restarting with stat
+2025-03-08 15:31:45,145 - WARNING -  * Debugger is active!
+2025-03-08 15:31:45,148 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 15:32:02,641 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\app.py', reloading
+2025-03-08 15:32:02,944 - INFO -  * Restarting with stat
+2025-03-08 15:32:05,485 - WARNING -  * Debugger is active!
+2025-03-08 15:32:05,488 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 15:32:09,612 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\app.py', reloading
+2025-03-08 15:32:09,928 - INFO -  * Restarting with stat
+2025-03-08 15:32:12,820 - WARNING -  * Debugger is active!
+2025-03-08 15:32:12,824 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 15:32:53,850 - INFO - 127.0.0.1 - - [08/Mar/2025 15:32:53] "[31m[1mGET /causal_discovery_use_file HTTP/1.1[0m" 400 -
+2025-03-08 15:34:49,059 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\app.py', reloading
+2025-03-08 15:34:49,372 - INFO -  * Restarting with stat
+2025-03-08 15:34:51,793 - WARNING -  * Debugger is active!
+2025-03-08 15:34:51,796 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 15:46:47,879 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 15:46:48,173 - INFO -  * Restarting with stat
+2025-03-08 15:46:51,088 - WARNING -  * Debugger is active!
+2025-03-08 15:46:51,092 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 15:51:01,903 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 15:51:02,207 - INFO -  * Restarting with stat
+2025-03-08 15:51:05,189 - WARNING -  * Debugger is active!
+2025-03-08 15:51:05,197 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 15:51:30,043 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 15:51:30,345 - INFO -  * Restarting with stat
+2025-03-08 15:51:33,164 - WARNING -  * Debugger is active!
+2025-03-08 15:51:33,168 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 15:59:16,679 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\app.py', reloading
+2025-03-08 15:59:17,035 - INFO -  * Restarting with stat
+2025-03-08 15:59:19,439 - WARNING -  * Debugger is active!
+2025-03-08 15:59:19,442 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 16:00:24,354 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 16:00:24,657 - INFO -  * Restarting with stat
+2025-03-08 16:27:40,327 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-03-08 16:27:40,327 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-08 16:27:40,328 - INFO -  * Restarting with stat
+2025-03-08 16:27:42,859 - WARNING -  * Debugger is active!
+2025-03-08 16:27:42,861 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 16:57:04,511 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 16:57:04,828 - INFO -  * Restarting with stat
+2025-03-08 16:57:07,580 - WARNING -  * Debugger is active!
+2025-03-08 16:57:07,583 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 17:01:55,590 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 17:01:55,919 - INFO -  * Restarting with stat
+2025-03-08 17:01:58,904 - WARNING -  * Debugger is active!
+2025-03-08 17:01:58,908 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 17:02:23,805 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 17:02:24,103 - INFO -  * Restarting with stat
+2025-03-08 18:19:38,291 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-03-08 18:19:38,291 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-08 18:19:38,293 - INFO -  * Restarting with stat
+2025-03-08 18:19:40,984 - WARNING -  * Debugger is active!
+2025-03-08 18:19:40,987 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 18:30:42,327 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-03-08 18:30:42,327 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-08 18:30:42,327 - INFO -  * Restarting with stat
+2025-03-08 18:30:45,040 - WARNING -  * Debugger is active!
+2025-03-08 18:30:45,044 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 18:30:53,142 - INFO - 127.0.0.1 - - [08/Mar/2025 18:30:53] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-08 18:31:23,095 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 18:31:23,377 - INFO -  * Restarting with stat
+2025-03-08 18:31:26,021 - WARNING -  * Debugger is active!
+2025-03-08 18:31:26,024 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 18:31:29,718 - INFO - 127.0.0.1 - - [08/Mar/2025 18:31:29] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-08 18:31:38,588 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-03-08 18:31:38,588 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-08 18:31:38,588 - INFO -  * Restarting with stat
+2025-03-08 18:31:41,121 - WARNING -  * Debugger is active!
+2025-03-08 18:31:41,124 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 18:31:41,850 - INFO - 127.0.0.1 - - [08/Mar/2025 18:31:41] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-08 18:32:03,755 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 18:32:04,045 - INFO -  * Restarting with stat
+2025-03-08 18:32:06,807 - WARNING -  * Debugger is active!
+2025-03-08 18:32:06,811 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 18:32:06,834 - INFO - 127.0.0.1 - - [08/Mar/2025 18:32:06] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-08 18:32:14,052 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 18:32:14,350 - INFO -  * Restarting with stat
+2025-03-08 18:32:16,974 - WARNING -  * Debugger is active!
+2025-03-08 18:32:16,977 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 18:32:16,996 - INFO - 127.0.0.1 - - [08/Mar/2025 18:32:16] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-08 18:32:34,466 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 18:32:34,792 - INFO -  * Restarting with stat
+2025-03-08 18:32:37,364 - WARNING -  * Debugger is active!
+2025-03-08 18:32:37,366 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 18:32:37,384 - INFO - 127.0.0.1 - - [08/Mar/2025 18:32:37] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-08 18:32:44,582 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 18:32:44,870 - INFO -  * Restarting with stat
+2025-03-08 18:32:47,382 - WARNING -  * Debugger is active!
+2025-03-08 18:32:47,385 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 18:32:47,404 - INFO - 127.0.0.1 - - [08/Mar/2025 18:32:47] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-08 18:32:59,705 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 18:33:00,001 - INFO -  * Restarting with stat
+2025-03-08 18:33:02,808 - WARNING -  * Debugger is active!
+2025-03-08 18:33:02,814 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 18:33:02,840 - INFO - 127.0.0.1 - - [08/Mar/2025 18:33:02] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-08 18:33:22,422 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 18:33:22,718 - INFO -  * Restarting with stat
+2025-03-08 18:33:25,167 - WARNING -  * Debugger is active!
+2025-03-08 18:33:25,170 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 18:33:25,195 - INFO - 127.0.0.1 - - [08/Mar/2025 18:33:25] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-08 18:33:33,423 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 18:33:33,718 - INFO -  * Restarting with stat
+2025-03-08 18:33:36,694 - WARNING -  * Debugger is active!
+2025-03-08 18:33:36,700 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 18:33:36,724 - INFO - 127.0.0.1 - - [08/Mar/2025 18:33:36] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-08 18:33:49,155 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 18:33:49,502 - INFO -  * Restarting with stat
+2025-03-08 18:33:52,459 - WARNING -  * Debugger is active!
+2025-03-08 18:33:52,464 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 18:33:52,486 - INFO - 127.0.0.1 - - [08/Mar/2025 18:33:52] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-08 18:39:04,806 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 18:39:05,106 - INFO -  * Restarting with stat
+2025-03-08 18:39:07,677 - WARNING -  * Debugger is active!
+2025-03-08 18:39:07,679 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 18:39:34,410 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 18:39:34,686 - INFO -  * Restarting with stat
+2025-03-08 18:39:37,523 - WARNING -  * Debugger is active!
+2025-03-08 18:39:37,528 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 18:39:38,801 - INFO - 127.0.0.1 - - [08/Mar/2025 18:39:38] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-08 18:41:30,514 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 18:41:30,799 - INFO -  * Restarting with stat
+2025-03-08 18:41:33,561 - WARNING -  * Debugger is active!
+2025-03-08 18:41:33,567 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 18:42:14,465 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 18:42:14,803 - INFO -  * Restarting with stat
+2025-03-08 18:42:17,984 - WARNING -  * Debugger is active!
+2025-03-08 18:42:17,990 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 18:42:36,084 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 18:42:36,402 - INFO -  * Restarting with stat
+2025-03-08 18:42:38,978 - WARNING -  * Debugger is active!
+2025-03-08 18:42:38,980 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 18:42:40,551 - INFO - 127.0.0.1 - - [08/Mar/2025 18:42:40] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-08 18:43:23,252 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-08 18:43:23,608 - INFO -  * Restarting with stat
+2025-03-08 18:43:26,967 - WARNING -  * Debugger is active!
+2025-03-08 18:43:26,972 - INFO -  * Debugger PIN: 105-621-694
+2025-03-08 18:43:27,015 - INFO - Learning structure using 'NOTEARS' optimisation.
+2025-03-08 18:43:27,017 - INFO - PyTorch backend for NotearsMLP is running on 'CPU'
+2025-03-08 18:43:51,516 - INFO - 127.0.0.1 - - [08/Mar/2025 18:43:51] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-09 00:05:32,558 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-03-09 00:05:32,558 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-09 00:05:32,559 - INFO -  * Restarting with stat
+2025-03-09 00:05:34,918 - WARNING -  * Debugger is active!
+2025-03-09 00:05:34,923 - INFO -  * Debugger PIN: 105-621-694
+2025-03-09 00:09:28,206 - INFO - 127.0.0.1 - - [09/Mar/2025 00:09:28] "[31m[1mGET /causal_discovery_use_file?form HTTP/1.1[0m" 400 -
+2025-03-09 00:09:49,552 - INFO - 127.0.0.1 - - [09/Mar/2025 00:09:49] "[31m[1mGET /causal_discovery_use_file HTTP/1.1[0m" 400 -
+2025-03-09 00:11:11,838 - INFO - 127.0.0.1 - - [09/Mar/2025 00:11:11] "[31m[1mPOST /causal_discovery_use_file HTTP/1.1[0m" 400 -
+2025-03-09 00:25:36,357 - INFO - 127.0.0.1 - - [09/Mar/2025 00:25:36] "[31m[1mPOST /causal_discovery_use_file HTTP/1.1[0m" 400 -
+2025-03-09 00:25:41,175 - INFO - 127.0.0.1 - - [09/Mar/2025 00:25:41] "[31m[1mGET /causal_discovery_use_file HTTP/1.1[0m" 400 -
+2025-03-09 00:26:33,593 - INFO - Learning structure using 'NOTEARS' optimisation.
+2025-03-09 00:26:33,593 - INFO - PyTorch backend for NotearsMLP is running on 'CPU'
+2025-03-09 00:26:57,744 - INFO - 127.0.0.1 - - [09/Mar/2025 00:26:57] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-09 00:32:00,328 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-09 00:32:00,771 - INFO -  * Restarting with stat
+2025-03-09 00:32:03,672 - WARNING -  * Debugger is active!
+2025-03-09 00:32:03,676 - INFO -  * Debugger PIN: 105-621-694
+2025-03-09 00:32:04,896 - INFO - Learning structure using 'NOTEARS' optimisation.
+2025-03-09 00:32:04,897 - INFO - PyTorch backend for NotearsMLP is running on 'CPU'
+2025-03-09 00:32:16,782 - INFO - 127.0.0.1 - - [09/Mar/2025 00:32:16] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-09 00:33:15,981 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-09 00:33:16,427 - INFO -  * Restarting with stat
+2025-03-09 00:42:25,522 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-03-09 00:42:25,522 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-09 00:42:25,523 - INFO -  * Restarting with stat
+2025-03-09 00:42:27,758 - WARNING -  * Debugger is active!
+2025-03-09 00:42:27,760 - INFO -  * Debugger PIN: 105-621-694
+2025-03-09 00:42:29,210 - INFO - Learning structure using 'NOTEARS' optimisation.
+2025-03-09 00:42:29,210 - INFO - PyTorch backend for NotearsMLP is running on 'CPU'
+2025-03-09 00:42:45,133 - INFO - 127.0.0.1 - - [09/Mar/2025 00:42:45] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-09 00:45:38,454 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-09 00:45:38,832 - INFO -  * Restarting with stat
+2025-03-09 00:45:41,839 - WARNING -  * Debugger is active!
+2025-03-09 00:45:41,843 - INFO -  * Debugger PIN: 105-621-694
+2025-03-09 00:45:52,304 - INFO - Learning structure using 'NOTEARS' optimisation.
+2025-03-09 00:45:52,305 - INFO - PyTorch backend for NotearsMLP is running on 'CPU'
+2025-03-09 00:46:04,009 - INFO - 127.0.0.1 - - [09/Mar/2025 00:46:04] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-09 00:50:57,595 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-09 00:50:58,015 - INFO -  * Restarting with stat
+2025-03-09 00:51:00,862 - WARNING -  * Debugger is active!
+2025-03-09 00:51:00,868 - INFO -  * Debugger PIN: 105-621-694
+2025-03-09 00:51:00,933 - INFO - Learning structure using 'NOTEARS' optimisation.
+2025-03-09 00:51:00,934 - INFO - PyTorch backend for NotearsMLP is running on 'CPU'
+2025-03-09 00:51:21,633 - INFO - 127.0.0.1 - - [09/Mar/2025 00:51:21] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-09 00:52:12,969 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-09 00:52:13,351 - INFO -  * Restarting with stat
+2025-03-09 00:52:15,657 - WARNING -  * Debugger is active!
+2025-03-09 00:52:15,659 - INFO -  * Debugger PIN: 105-621-694
+2025-03-09 00:52:17,214 - INFO - Learning structure using 'NOTEARS' optimisation.
+2025-03-09 00:52:17,214 - INFO - PyTorch backend for NotearsMLP is running on 'CPU'
+2025-03-09 00:52:28,945 - INFO - 127.0.0.1 - - [09/Mar/2025 00:52:28] "GET /causal_discovery_use_file HTTP/1.1" 200 -
+2025-03-09 01:00:34,653 - INFO -  * Detected change in 'D:\\data\\causalgraph2025\\causaldiscovery_backend\\util\\discover_pure_analysis.py', reloading
+2025-03-09 01:00:35,093 - INFO -  * Restarting with stat
+2025-03-09 01:00:38,135 - WARNING -  * Debugger is active!
+2025-03-09 01:00:38,139 - INFO -  * Debugger PIN: 105-621-694
+2025-03-09 01:00:38,185 - INFO - Learning structure using 'NOTEARS' optimisation.
+2025-03-09 01:00:38,185 - INFO - PyTorch backend for NotearsMLP is running on 'CPU'
+2025-03-09 01:00:49,862 - INFO - 127.0.0.1 - - [09/Mar/2025 01:00:49] "GET /causal_discovery_use_file HTTP/1.1" 200 -
