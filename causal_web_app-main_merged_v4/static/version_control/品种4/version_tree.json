@@ -1,0 +1,10 @@
+{
+    "root": {
+        "version_number": "v1.0",
+        "content": "初始版本",
+        "author": "Unknown",
+        "children": []
+    },
+    "current_version": "v1.0",
+    "version_counter": 1
+}

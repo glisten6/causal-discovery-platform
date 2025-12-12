@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>版本管理</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            font-size: 18px;
+            padding-bottom: 60px;
+        }
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            width: 100%;
+            position: relative;
+        }
+        
+        .header-title {
+            text-align: center;
+        }
+        
+        .header-variety {
+            position: absolute;
+            right: 20px;
+            font-size: 22px;
+            color: #ffffff;
+            line-height: 40px;
+        }
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .tree-card {
+            flex: 1;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 100%;
+        }
+        .tree-card h3 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #4CAF50;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .version-info-container {
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        
+        .version-info {
+            color: #000;
+            font-weight: bold;
+            font-size: 22px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .action-buttons button {
+            background-color: white;
+            color: #4CAF50;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+        
+        .action-buttons button:hover {
+            background-color: #f0f0f0;
+        }
+        .bottom-spacer {
+            height: 60px;
+            min-height: 60px;
+            width: 100%;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="header-title">版本管理</span>
+        <span id="selectedVarietySpan" class="header-variety"></span>
+    </div>
+    <div class="container">
+        <div class="tree-card">
+            <h3>版本管理树</h3>
+            <iframe id="treeIframe" width="100%" height="600px"></iframe>
+        </div>
+        <div class="tree-card">
+            <h3>当前版本因果图</h3>
+            <iframe id="rightGraph" width="100%" height="600px"></iframe>
+        </div>
+    </div>
+    
+    <!-- 添加版本信息容器 -->
+    <div class="version-info-container">
+        <div class="version-info">
+            <span style="color: #409EFF;">● 当前预览：<span id="currentVersionSpan"></span></span>
+            <span style="margin-left: 40px; color: #F56C6C;">● 全局版本：<span id="globalVersionSpan"></span></span>
+        </div>
+    </div>
+    
+    <div class="bottom-spacer"></div>
+    <div class="footer">
+        <div class="footer-content">
+            <div class="action-buttons">
+                <button onclick="returnToMain()">返回主界面</button>
+                <button onclick="setGlobalVersion()">设为全局因果图</button>
+                <button onclick="deleteVersion()">删除版本</button>
+                <button onclick="goToIndex()">因果图编辑</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript 文件 -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        // 页面加载时，根据 sessionStorage 中的品种信息动态设置 iframe 的 src
+        window.onload = function() {
+            // 先检测服务器是否重启
+            fetch('/get_server_session')
+                .then(r => r.json())
+                .then(data => {
+                    const lastSessionId = localStorage.getItem('serverSessionId');
+                    if (lastSessionId && lastSessionId !== data.session_id) {
+                        // 服务器已重启，清空存储并跳转到主页
+                        localStorage.clear();
+                        sessionStorage.clear();
+                        alert("服务器已重启，请重新选择品种");
+                        window.location.href = '/';
+                        return;
+                    }
+                    localStorage.setItem('serverSessionId', data.session_id);
+                    initVersionsPage();
+                })
+                .catch(() => {
+                    initVersionsPage();
+                });
+        };
+        
+        function initVersionsPage() {
+            bindTreeIframeEvents();
+            const selectedVariety = sessionStorage.getItem('selectedVariety');
+            if (selectedVariety) {
+                // 加载版本管理树
+                const treeIframe = document.getElementById('treeIframe');
+                if (treeIframe) {
+                    treeIframe.src = `static/version_control/${encodeURIComponent(selectedVariety)}/version_tree.html?v=${Date.now()}`;
+                }
+                
+                // 加载全局版本（current）并显示
+                const rightGraph = document.getElementById('rightGraph');
+                if (rightGraph) {
+                    fetch('/get_current_version', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            variety_name: selectedVariety
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        rightGraph.src = data.path + "?v=" + Date.now();
+                        const versionName = data.message.split("当前版本: ")[1];
+                        // 初始时预览版本和全局版本相同
+                        document.getElementById('currentVersionSpan').innerText = versionName;
+                        document.getElementById('globalVersionSpan').innerText = versionName;
+                    })
+                    .catch(error => {
+                        console.error("Error loading current version:", error);
+                        document.getElementById('currentVersionSpan').innerText = "未选择";
+                        document.getElementById('globalVersionSpan').innerText = "未选择";
+                    });
+                }
+                
+                // 更新悬浮条的文本
+                document.getElementById('selectedVarietySpan').innerText = "当前品种：" + selectedVariety;
+            } else {
+                alert("未选择品种，请返回主界面选择品种");
+                window.location.href = '/';
+            }
+        };
+        
+        // 修改返回主界面的函数，清空已选品种
+        function returnToMain() {
+            sessionStorage.removeItem('selectedVariety');
+            window.location.href = '/';
+        }
+        
+        // 设为全局因果图
+        function setGlobalVersion() {
+            const selectedVariety = sessionStorage.getItem('selectedVariety');
+            if (!selectedVariety) {
+                alert("未选择品种");
+                return;
+            }
+            const currentVersion = document.getElementById('currentVersionSpan').innerText;
+            if (!currentVersion) {
+                alert("请先选择一个版本");
+                return;
+            }
+            
+            fetch('/set_global_version', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    variety_name: selectedVariety,
+                    version_name: currentVersion
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                // 更新全局版本显示
+                document.getElementById('globalVersionSpan').innerText = currentVersion;
+                // 刷新版本树显示
+                const treeIframe = document.getElementById('treeIframe');
+                if (treeIframe) {
+                    treeIframe.src = `static/version_control/${encodeURIComponent(selectedVariety)}/version_tree.html?v=${Date.now()}`;
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                alert("设置失败");
+            });
+        }
+        
+        // 删除版本
+        function deleteVersion() {
+            const selectedVariety = sessionStorage.getItem('selectedVariety');
+            if (!selectedVariety) {
+                alert("未选择品种");
+                return;
+            }
+            const currentVersion = document.getElementById('currentVersionSpan').innerText;
+            if (!currentVersion) {
+                alert("请先选择一个版本");
+                return;
+            }
+            
+            // 第一次确认
+            if (!confirm(`确定要删除版本 "${currentVersion}" 吗？此操作不可恢复！`)) {
+                return;
+            }
+            
+            // 输入密码
+            const password = prompt("请输入管理员密码以确认删除：");
+            if (!password) {
+                return;
+            }
+            
+            fetch('/delete_version', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    variety_name: selectedVariety,
+                    version_name: currentVersion,
+                    password: password
+                })
+            })
+            .then(response => response.json().then(data => ({status: response.status, data: data})))
+            .then(result => {
+                alert(result.data.message);
+                if (result.status === 200) {
+                    // 刷新版本树
+                    const treeIframe = document.getElementById('treeIframe');
+                    if (treeIframe) {
+                        treeIframe.src = `static/version_control/${encodeURIComponent(selectedVariety)}/version_tree.html?v=${Date.now()}`;
+                    }
+                    // 重新加载全局版本
+                    fetch('/get_current_version', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ variety_name: selectedVariety })
+                    })
+                    .then(r => r.json())
+                    .then(data => {
+                        document.getElementById('rightGraph').src = data.path + "?v=" + Date.now();
+                        const versionName = data.message.split("当前版本: ")[1];
+                        document.getElementById('currentVersionSpan').innerText = versionName;
+                    });
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                alert("删除失败");
+            });
+        }
+
+        // 增加因果图编辑按钮的逻辑
+        function goToIndex() {
+            const selectedVariety = sessionStorage.getItem('selectedVariety');
+            if (!selectedVariety) {
+                alert("未选择品种，请返回主界面选择品种");
+                return;
+            }
+            
+            // 获取当前选中的版本名称
+            const currentVersion = document.getElementById('currentVersionSpan').innerText;
+
+            const versionPath = document.getElementById('rightGraph').src;
+            // 调用后端接口生成新的 modified 和 original 图
+            fetch('/visualize_version_in_both', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    variety_name: selectedVariety,
+                    version_name: currentVersion,
+                    version_path: versionPath
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Data from /visualize_version_in_both:", data); // 调试信息
+                
+                // 显示后端返回的消息
+                alert(data.message);
+                
+                // 跳转到编辑界面
+                window.location.href = `/index?variety=${encodeURIComponent(selectedVariety)}`;
+            })
+            .catch(err => {
+                console.error("Error in goToIndex:", err);
+                alert("生成因果图失败，请重试");
+            });
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+    "root": {
+        "version_number": "v1.0",
+        "content": "初始版本",
+        "author": "Unknown",
+        "children": [
+            {
+                "version_number": "v2.0",
+                "content": "第二个版本内容更新",
+                "author": "张三",
+                "children": [
+                    {
+                        "version_number": "v3.0",
+                        "content": "第三个版本内容更新",
+                        "author": "李四",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "version_number": "v1.0-branch",
+                "content": "第一个版本的分支版本",
+                "author": "王五",
+                "children": []
+            }
+        ]
+    },
+    "current_version": "v1.0-branch",
+    "version_counter": 3
+}

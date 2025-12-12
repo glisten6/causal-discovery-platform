@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可视化编辑</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            font-size: 18px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            width: 100%;
+            position: relative;
+        }
+        
+        .header-title {
+            text-align: center;
+        }
+
+        .header-variety {
+            position: absolute;
+            right: 20px;
+            font-size: 22px;
+            color: #ffffff;
+            line-height: 40px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .graph-container {
+            flex: 1;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 100%;
+        }
+
+        .graph-container h3 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .recommendation-container {
+            flex: 1;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 100%;
+        }
+
+        .recommendation-container h3 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .recommendation-prompt {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .recommendation-prompt button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .recommendation-prompt button:hover {
+            background-color: #45a049;
+        }
+
+        .pending-changes {
+            margin-top: 20px;
+            width: 90%;
+            max-width: 100%;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 80px;
+        }
+
+        .pending-changes h3 {
+            font-size: 24px;
+        }
+
+        .pending-changes ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .pending-changes li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .pending-changes button {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .pending-changes button:hover {
+            background-color: #cc0000;
+        }
+
+        .button-group {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px; /* 增加按钮之间的间距 */
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap; /* 允许按钮换行 */
+        }
+
+        .button-group button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button-group button:hover {
+            background-color: #45a049;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #4CAF50;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .footer button {
+            background-color: white;
+            color: #4CAF50;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 0 10px;
+        }
+
+        .footer button:hover {
+            background-color: #f1f1f1;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 72%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            width: 95%;
+            max-width: 1000px;
+        }
+
+        .modal h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .modal input {
+            display: block;
+            margin: 25px 0;
+            padding: 18px;
+            width: 100%;
+            font-size: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .modal button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 18px;
+        }
+
+        .modal button:hover {
+            background-color: #45a049;
+        }
+
+        .variety-box {
+            margin-top: 20px;
+            width: 90%;
+            max-width: 100%;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .variety-box h3 {
+            margin-top: 0;
+        }
+
+        .variety-box select, .variety-box input {
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .variety-box button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .variety-box button:hover {
+            background-color: #45a049;
+        }
+
+        .variety-box iframe {
+            width: 100%;
+            height: 300px;
+            margin-top: 10px;
+        }
+
+        .changes-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .changes-table th, .changes-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            font-size: 18px;
+        }
+
+        .changes-table th {
+            background-color: #f2f2f2;
+            font-size: 20px;
+        }
+
+        .recommendation-type-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .recommendation-type-modal input[type="file"] {
+            margin: 10px 0;
+        }
+
+        .recommendation-type-modal select {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+
+        body {
+            padding-bottom: 60px; /* 防止.footer遮挡内容 */
+        }
+        
+        .bottom-spacer {
+            height: 60px;
+            min-height: 60px;
+            width: 100%;
+            flex-shrink: 0; /* 防止在Flex布局中被压缩 */
+        }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="header-title">可视化编辑</span>
+        <span id="selectedVarietySpan" class="header-variety"></span>
+    </div>
+    <div class="container">
+        <div class="graph-container">
+            <h3>原因果图</h3>
+            <iframe id="leftGraph" src="{{ url_for('static', filename='original_graph.html') }}?v={{ version }}" width="100%" height="600px"></iframe>
+        </div>
+        <div class="recommendation-container">
+            <h3>可修改的因果图</h3>
+            <div id="recommendationPrompt" class="recommendation-prompt">
+                <button onclick="openRecommendationTypeModal()">因果推荐</button>
+            </div>
+            <iframe id="rightGraph" src="" width="100%" height="600px"></iframe>
+        </div>
+    </div>
+    <div class="button-group">
+        <button onclick="openNodeModal('add')">添加节点</button>
+        <button onclick="openNodeModal('delete')">删除节点</button>
+        <button onclick="openNodeModal('update')">更新节点</button>
+        <button onclick="openEdgeModal('add')">添加边</button>
+        <button onclick="openEdgeModal('delete')">删除边</button>
+        <button onclick="openEdgeModal('update')">更新边</button>
+    </div>
+    <div class="pending-changes">
+        <h3>修改记录</h3>
+        <table class="changes-table">
+            <thead>
+                <tr>
+                    <th>修改类型</th>
+                    <th>起始节点</th>
+                    <th>终止节点</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="pendingChangesList">
+            </tbody>
+        </table>
+        <button onclick="downloadChanges()">下载修改记录</button>
+    </div>
+
+    <div class="bottom-spacer"></div>
+
+    <!-- 节点操作模态框 -->
+    <div id="nodeModal" class="modal">
+        <h3 id="nodeModalTitle"></h3>
+        <input id="nodeName" placeholder="节点名称 (必填)">
+        <input id="nodeType" placeholder="节点类型">
+        <input id="nodeSource" placeholder="节点来源">
+        <button onclick="submitNodeForm()">完成</button>
+        <button onclick="closeModal('nodeModal')">取消</button>
+    </div>
+
+    <!-- 边操作模态框 -->
+    <div id="edgeModal" class="modal">
+        <h3 id="edgeModalTitle"></h3>
+        <input id="startNode" placeholder="起始节点 (必填)">
+        <input id="endNode" placeholder="终止节点 (必填)">
+        <input id="edgeRelation" placeholder="关系">
+        <input id="edgeSource" placeholder="来源">
+        <button onclick="submitEdgeForm()">完成</button>
+        <button style="display: none;" onclick="changeEdgeDirection()">改变边方向</button>
+        <button onclick="closeModal('edgeModal')">取消</button>
+    </div>
+
+    <!-- 因果推荐类型模态框 -->
+    <div id="recommendationTypeModal" class="recommendation-type-modal">
+        <h3>选择推荐类型</h3>
+        <input type="radio" id="dataBased" name="recommendationType" value="dataBased" checked onclick="toggleAlgorithmOptions()">
+        <label for="dataBased">基于数据的推荐</label><br>
+        <input type="radio" id="knowledgeBased" name="recommendationType" value="knowledgeBased" onclick="toggleAlgorithmOptions()">
+        <label for="knowledgeBased">基于知识的推荐</label><br>
+        
+        <!-- 特征品质输入框 -->
+        <div style="margin-top: 15px;">
+            <label for="featureQuality">特征品质：</label>
+            <input type="text" id="featureQuality" name="featureQuality" placeholder="输入特征品质名称（选填）" style="width: 300px; height: 30px; padding: 5px;">
+        </div>
+
+        <div id="dataBasedOptions" style="margin-top: 10px;">
+            <label for="dataAlgorithm">选择算法：</label>
+            <select id="dataAlgorithm" style="width: 300px; height: 30px; padding: 5px;">
+                <option value="Notears-mlp">Notears-mlp</option>
+                <option value="PC">PC</option>
+                <option value="MCSL">MCSL</option>
+                <option value="DAG_GNN">DAG_GNN</option>
+                <option value="GES">GES</option>
+                <option value="DirectLiNGAM">DirectLiNGAM</option>
+                <option value="GraNDag">GraNDag</option>
+            </select><br>
+            <label for="dataFile">选择数据文件：</label>
+            <input type="file" id="dataFile" name="dataFile">
+            <p style="color: red; font-size: 14px; margin-top: 5px;">提示：数据文件的节点与原因果图节点不能存在同义词现象</p>
+        </div>
+        
+        <div id="knowledgeBasedOptions" style="margin-top: 10px; display: none;">
+            <label for="knowledgeAlgorithm">选择算法：</label>
+            <select id="knowledgeAlgorithm" style="width: 300px; height: 30px; padding: 5px;">
+                <option value="algorithm8">算法3</option>
+                <option value="algorithm9">算法4</option>
+            </select><br>
+            <label for="knowledgeFile">选择知识文件：</label>
+            <input type="file" id="knowledgeFile" name="knowledgeFile">
+            <p style="color: red; font-size: 14px; margin-top: 5px;">提示：数据文件的节点与原因果图节点不能存在同义词现象</p>
+        </div>
+        <!--        符磊2025/4/9修改-->
+        <button onclick="confirmRecommendation()">确定</button>
+        <!--        <button-->
+        <!--              class="file_confirm"-->
+        <!--              data-src="{{ url_for('static', filename='modified_graph.html') }}">-->
+        <!--              确定-->
+        <!--        </button>-->
+        <!--结束-->
+        <button onclick="closeModal('recommendationTypeModal')">取消</button>
+    </div>
+
+    <!-- 底部悬浮框 -->
+    <div class="footer">
+        <button onclick="returnToMain()">返回主界面</button>
+        <button onclick="goToVersions()">版本管理</button>
+        <button onclick="saveModifiedGraph()">保存</button>
+    </div>
+
+    <!-- 等待提示模态框 -->
+    <div id="loadingModal" class="modal" style="display: none;">
+        <div style="text-align: center; padding: 20px;">
+            <p>正在生成因果推荐……</p>
+        </div>
+    </div>
+
+    <script>
+        // 定义全局变量，存储静态文件的URL
+        const staticUrls = {
+            recommendedGraph: "{{ url_for('static', filename='recommended_graph.html') }}",
+            modifiedGraph: "{{ url_for('static', filename='modified_graph.html') }}",
+            originalGraph: "{{ url_for('static', filename='original_graph.html') }}",
+            scriptJs: "{{ url_for('static', filename='script.js') }}"
+        };
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        // 页面加载时，检查是否已选择品种
+        window.onload = function() {
+            // 先检测服务器是否重启
+            fetch('/get_server_session')
+                .then(r => r.json())
+                .then(data => {
+                    const lastSessionId = localStorage.getItem('serverSessionId');
+                    if (lastSessionId && lastSessionId !== data.session_id) {
+                        // 服务器已重启，清空存储并跳转到主页
+                        localStorage.clear();
+                        sessionStorage.clear();
+                        alert("服务器已重启，请重新选择品种");
+                        window.location.href = '/';
+                        return;
+                    }
+                    localStorage.setItem('serverSessionId', data.session_id);
+                    initIndexPage();
+                })
+                .catch(() => {
+                    initIndexPage();
+                });
+        };
+        
+        function initIndexPage() {
+            let selectedVariety = sessionStorage.getItem('selectedVariety');
+            
+            if (!selectedVariety) {
+                alert("未选择品种，请返回主界面选择品种");
+                window.location.href = '/';
+                return;
+            }
+            
+            document.getElementById("selectedVarietySpan").innerText = "当前品种：" + selectedVariety;
+            
+            // 调用后端重新生成当前品种的图
+            fetch('/visualize_variety_in_both', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ variety_name: selectedVariety })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // 加载左右两边的图
+                const leftGraph = document.getElementById('leftGraph');
+                const rightGraph = document.getElementById('rightGraph');
+                leftGraph.src = staticUrls.originalGraph + "?v=" + Date.now();
+                rightGraph.src = staticUrls.modifiedGraph + "?v=" + Date.now();
+                
+                // 设置可编辑标志
+                ifbuttonRecommendation = true;
+            })
+            .catch(err => console.error(err));
+        }
+
+        
+        // 修改返回主界面的函数，清空已选品种
+        function returnToMain() {
+            sessionStorage.removeItem('selectedVariety');
+            window.location.href = '/';
+        }
+        
+        // 跳转到版本管理
+        function goToVersions() {
+            window.location.href = '/versions';
+        }
+
+//    符磊2025/4/9修改
+//        document.querySelectorAll('.file_confirm').forEach(button => {
+//     button.addEventListener('click', async function() {  // 添加 async 关键字
+//         try {
+//             // 等待异步操作完成
+//             await confirmRecommendation();
+//
+//             // 确认完成后执行后续操作
+//             const iframe = document.getElementById('rightGraph');
+//             iframe.src = this.dataset.src;
+//         } catch (error) {
+//             console.error('操作失败:', error);
+//         }
+//     });
+// });
+    </script>
+
+
+</body>
+</html>

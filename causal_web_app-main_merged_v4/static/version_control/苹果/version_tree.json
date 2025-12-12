@@ -1,0 +1,24 @@
+{
+    "root": {
+        "version_number": "v1.0",
+        "content": "Initial Version",
+        "author": "Unknown",
+        "created_at": "2025-04-18T13:14:05.264648",
+        "last_modified": "2025-04-18T13:14:05.264648",
+        "causal_graph_hash": "159055d91fcd3615",
+        "children": [
+            {
+                "version_number": "v2.0",
+                "content": "demo",
+                "author": "李四",
+                "created_at": "2025-04-18T13:17:43.807992",
+                "last_modified": "2025-04-18T13:17:43.807992",
+                "causal_graph_hash": "b3a9260dc8ddb0b4",
+                "children": []
+            }
+        ]
+    },
+    "current_version": "v2.0",
+    "version_counter": 2,
+    "variety_name": "苹果"
+}

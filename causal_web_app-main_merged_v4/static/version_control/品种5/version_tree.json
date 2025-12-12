@@ -1,0 +1,17 @@
+{
+    "root": {
+        "version_number": "v1.0",
+        "content": "初始版本",
+        "author": "Unknown",
+        "children": [
+            {
+                "version_number": "8ad3cb94ca8eba6a",
+                "content": "demo",
+                "author": "李四",
+                "children": []
+            }
+        ]
+    },
+    "current_version": "8ad3cb94ca8eba6a",
+    "version_counter": 1
+}
